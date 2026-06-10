@@ -308,10 +308,40 @@ ul { list-style: none; }
    PHILOSOPHY
 =========================== */
 .philosophy {
-  background: var(--white);
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+}
+
+.philosophy__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: brightness(0.55);
+  transition: transform 0.8s var(--ease);
+}
+
+.philosophy:hover .philosophy__bg {
+  transform: scale(1.03);
+}
+
+.philosophy__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(13,33,55,0.7) 0%,
+    rgba(13,33,55,0.35) 60%,
+    rgba(13,33,55,0.15) 100%
+  );
 }
 
 .philosophy__grid {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 600px;
@@ -321,7 +351,7 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 64px 64px 64px 80px;
+  padding: 80px 64px 80px 80px;
   min-height: 560px;
 }
 
@@ -330,30 +360,31 @@ ul { list-style: none; }
   font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 500;
   line-height: 1.5;
-  color: var(--navy);
+  color: var(--white);
   margin-bottom: 32px;
 }
 
 .philosophy__body {
   font-size: 0.9rem;
   line-height: 2.1;
-  color: var(--gray-700);
+  color: rgba(255,255,255,0.82);
   margin-bottom: 20px;
+}
+
+.philosophy__label {
+  color: var(--emerald-light) !important;
 }
 
 .philosophy__image {
   overflow: hidden;
   min-height: 560px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .philosophy__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transition: transform 0.8s var(--ease);
+  display: none;
 }
-.philosophy__image:hover img { transform: scale(1.03); }
 
 /* ===========================
    SPLIT SECTION (VISION + GROWTH)
