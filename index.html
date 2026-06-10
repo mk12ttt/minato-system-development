@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>minato system development LLC</title>
+  <meta name="description" content="働く時間を、価値ある時間へ。業務改善を通じて企業の成長と働く人々の豊かな時間を創出する。">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#top" class="header__logo">minato system development</a>
+      <button class="header__hamburger" id="hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="header__nav" id="nav">
+        <a href="#about">ABOUT</a>
+        <a href="#service">SERVICE</a>
+        <a href="#works">WORKS</a>
+        <a href="#company">COMPANY</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="top">
+    <div class="hero__bg">
+      <img src="assets/images/hero.jpg" alt="みなとみらい夜景" class="hero__img">
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Technology for Better Work</p>
+      <h1 class="hero__heading">
+        働く時間を、<br>価値ある時間へ。
+      </h1>
+      <p class="hero__body">
+        私たちはシステムを開発する会社ではありません。<br>
+        企業の成長を支える仕組みを創る会社です。<br>
+        業務効率化による経費削減。<br>
+        働く人々の負担軽減。<br>
+        そして新しい価値を生み出す時間の創出。<br>
+        横浜から未来へ続く改善を届けます。
+      </p>
+      <div class="hero__cta">
+        <a href="#service" class="btn btn--primary">事業内容を見る</a>
+        <a href="#contact" class="btn btn--outline">お問い合わせ</a>
+      </div>
+    </div>
+    <a href="#about" class="hero__scroll" aria-label="下へスクロール">
+      <span class="hero__scroll-line"></span>
+      <span class="hero__scroll-text">SCROLL</span>
+    </a>
+  </section>
+
+  <!-- ========== ABOUT / PHILOSOPHY ========== -->
+  <section class="philosophy" id="about">
+    <div class="philosophy__grid">
+      <div class="philosophy__content">
+        <p class="label">PHILOSOPHY</p>
+        <h2 class="philosophy__heading">
+          変わらない為に、<br>変わり続ける。
+        </h2>
+        <p class="philosophy__body">
+          歴史ある建築が未来へ受け継がれるように。<br>
+          自然が季節とともに姿を変えるように。<br>
+          企業もまた、変化を続けることで<br>
+          本来の価値を守り続けることができます。
+        </p>
+        <p class="philosophy__body">
+          私たちは技術を目的とはしません。<br>
+          改善を積み重ねることで、<br>
+          企業が本来大切にすべき価値を支え続けます。
+        </p>
+      </div>
+      <div class="philosophy__image">
+        <img src="assets/images/philosophy.jpg" alt="サグラダ・ファミリア">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VISION + GROWTH ========== -->
+  <section class="split-section">
+    <div class="split-section__panel split-section__panel--vision">
+      <img src="assets/images/vision.jpg" alt="富士山" class="split-section__bg">
+      <div class="split-section__overlay"></div>
+      <div class="split-section__content">
+        <p class="label label--light">VISION</p>
+        <h2>高い目標を持ち、<br>一歩ずつ着実に。</h2>
+        <p>
+          私たちは急成長を追い求める会社ではありません。<br>
+          一歩ずつ積み重ねながら、確かな価値を提供し続ける会社を目指しています。<br>
+          企業の成長。働く人の豊かな時間。<br>
+          社会に必要とされる仕組み。<br>
+          それらを未来へ繋ぐ存在でありたいと考えています。
+        </p>
+      </div>
+    </div>
+    <div class="split-section__panel split-section__panel--growth">
+      <img src="assets/images/growth.jpg" alt="クローバー" class="split-section__bg">
+      <div class="split-section__overlay"></div>
+      <div class="split-section__content">
+        <p class="label label--light">GROWTH</p>
+        <h2>小さな改善が、<br>大きな成長につながる。</h2>
+        <p>
+          業務改善とは単なる効率化ではありません。<br>
+          働く人の負担を減らし、企業の利益を高め、<br>
+          新しい挑戦を生み出す余白をつくること。<br>
+          私たちは、その積み重ねを大切にしています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICE ========== -->
+  <section class="service" id="service">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">SERVICE</p>
+        <h2 class="section-title">事業内容</h2>
+      </div>
+      <div class="service__grid">
+        <div class="service__card">
+          <div class="service__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="8" width="28" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M14 28v4M26 28v4M10 32h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M14 16l4 4-4 4M22 24h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>システム開発<br>及び販売</h3>
+          <ul>
+            <li>業務システム開発</li>
+            <li>クラウドシステム開発</li>
+            <li>AWS環境構築</li>
+            <li>保守運用支援</li>
+          </ul>
+        </div>
+        <div class="service__card">
+          <div class="service__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="12" y="4" width="16" height="28" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M17 30h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <rect x="15" y="8" width="10" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <h3>アプリケーション<br>開発及び販売</h3>
+          <ul>
+            <li>iOSアプリ開発</li>
+            <li>業務アプリ開発</li>
+            <li>DX推進支援</li>
+            <li>業務デジタル化</li>
+          </ul>
+        </div>
+        <div class="service__card">
+          <div class="service__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.5"/>
+              <ellipse cx="20" cy="20" rx="6" ry="14" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M6 20h28M8 13h24M8 27h24" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <h3>Webデザイン</h3>
+          <ul>
+            <li>コーポレートサイト制作</li>
+            <li>サービスサイト制作</li>
+            <li>UI/UXデザイン</li>
+            <li>ブランドデザイン</li>
+          </ul>
+        </div>
+        <div class="service__card">
+          <div class="service__icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 28V20M16 28V14M24 28V18M32 28V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M8 20l8-6 8 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>業務改善提案 /<br>DX推進支援</h3>
+          <ul>
+            <li>業務分析</li>
+            <li>業務改善提案</li>
+            <li>運用練達化</li>
+            <li>コスト削減支援</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WORKS ========== -->
+  <section class="works" id="works">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">WORKS</p>
+        <h2 class="section-title">実績紹介</h2>
+      </div>
+      <div class="works__card">
+        <div class="works__info">
+          <p class="works__category">古物買取業向け電子契約システム</p>
+          <h3 class="works__title">SmartBuyers</h3>
+          <p class="works__desc">
+            紙契約からデジタル運用へ。本人確認、電子署名、<br>
+            本社承認、クラウド保管。<br>
+            現場と本社をリアルタイムでつなぐ仕組みを提供しています。
+          </p>
+          <ul class="works__features">
+            <li>
+              <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              ペーパーレス化
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              承認業務効率化
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              保管コスト削減
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              業務時間削減
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              監査対応強化
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn--primary btn--sm">導入事例を見る &rarr;</a>
+        </div>
+        <div class="works__visual">
+          <img src="assets/images/smartbuyers-mockup.png" alt="SmartBuyersアプリ画面" onerror="this.style.display='none'">
+          <div class="works__visual-placeholder">
+            <span>SmartBuyers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MESSAGE + COMPANY + CONTACT ========== -->
+  <section class="bottom-section">
+    <div class="container">
+      <div class="bottom-section__grid">
+
+        <!-- MESSAGE -->
+        <div class="message">
+          <p class="label">MESSAGE</p>
+          <h2>代表メッセージ</h2>
+          <p>
+            私たちは技術を売る会社ではありません。<br>
+            本当に提供したいのは、企業が成長するための時間です。<br><br>
+            効率化によって生まれた時間は、<br>
+            新しい挑戦へ。家族との時間へ。<br>
+            仲間との時間へ。企業の未来へ。<br>
+            技術はそのための手段であると考えています。<br><br>
+            一つひとつの課題に真摯に向き合い、<br>
+            横浜から価値ある仕組みを届けてまいります。
+          </p>
+        </div>
+
+        <!-- COMPANY -->
+        <div class="company" id="company">
+          <p class="label">COMPANY</p>
+          <h2>会社概要</h2>
+          <table class="company__table">
+            <tr>
+              <th>会社名</th>
+              <td>minato system development LLC</td>
+            </tr>
+            <tr>
+              <th>所在地</th>
+              <td>神奈川県横浜市西区浅間町1-4-3</td>
+            </tr>
+            <tr>
+              <th>事業内容</th>
+              <td>
+                システム開発及び販売<br>
+                アプリケーション開発及び販売<br>
+                Webデザイン<br>
+                業務改善コンサルティング<br>
+                DX推進支援
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="contact" id="contact">
+          <p class="label">CONTACT</p>
+          <h2>お問い合わせ</h2>
+          <p>業務改善のご相談からシステム開発まで、<br>真摯に対応いたします。</p>
+          <a href="contact.html" class="btn btn--primary">お問い合わせフォームへ</a>
+          <p class="contact__email">
+            <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 7l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            info@minato-system-development.com
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__logo">minato system development LLC</p>
+      <nav class="footer__nav">
+        <a href="#about">ABOUT</a>
+        <a href="#service">SERVICE</a>
+        <a href="#works">WORKS</a>
+        <a href="#company">COMPANY</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+      <p class="footer__copy">&copy; 2024 minato system development LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
