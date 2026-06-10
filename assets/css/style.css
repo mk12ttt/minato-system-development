@@ -709,9 +709,11 @@ ul { list-style: none; }
 }
 
 .bottom-section__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .message h2, .company h2, .contact h2 {
