@@ -15,6 +15,21 @@ nav.querySelectorAll('a').forEach(a => {
 });
 
 // Scroll reveal
+const revealSelectors = [
+  '.label',
+  '.section-title',
+  '.service__card',
+  '.works__info',
+  '.works__visual',
+  '.philosophy__heading',
+  '.philosophy__body',
+  '.split-section__content',
+  '.message h2', '.message p',
+  '.company h2', '.company__table',
+  '.contact h2', '.contact > p',
+  '.contact__email',
+].join(',');
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -22,26 +37,23 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(e.target);
     }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Add reveal classes dynamically
-document.querySelectorAll([
-  '.label', '.section-title', '.service__card',
-  '.works__info', '.works__visual',
-  '.philosophy__heading', '.philosophy__body',
-  '.split-section__content',
-  '.message h2', '.message p',
-  '.company h2', '.company__table',
-  '.contact h2', '.contact > p'
-].join(',')).forEach((el, i) => {
+document.querySelectorAll(revealSelectors).forEach((el, i) => {
   el.classList.add('reveal');
-  if (i % 4 === 1) el.classList.add('reveal-delay-1');
-  if (i % 4 === 2) el.classList.add('reveal-delay-2');
-  if (i % 4 === 3) el.classList.add('reveal-delay-3');
+  const delay = (i % 4) * 0.08;
+  el.style.transitionDelay = delay + 's';
+
+  // Already in viewport on page load → show immediately
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    el.classList.add('visible');
+  } else {
+    observer.observe(el);
+  }
 });
 
+// Service cards staggered
 document.querySelectorAll('.service__card').forEach((el, i) => {
-  el.classList.add('reveal', `reveal-delay-${i % 4}`);
+  el.style.transitionDelay = (i * 0.1) + 's';
 });
