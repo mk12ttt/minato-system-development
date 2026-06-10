@@ -310,7 +310,6 @@ ul { list-style: none; }
 .philosophy {
   position: relative;
   overflow: hidden;
-  background-image: url('../images/philosophy.jpg');
   background-size: cover;
   background-position: center top;
 }
