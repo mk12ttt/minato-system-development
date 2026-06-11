@@ -8,7 +8,6 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('nav');
 const navOverlay = document.getElementById('navOverlay');
-const navClose = document.getElementById('navClose');
 
 function openMenu() {
   nav.classList.add('open');
@@ -26,7 +25,6 @@ function closeMenu() {
 hamburger.addEventListener('click', () => {
   nav.classList.contains('open') ? closeMenu() : openMenu();
 });
-navClose.addEventListener('click', closeMenu);
 navOverlay.addEventListener('click', closeMenu);
 nav.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', closeMenu);
