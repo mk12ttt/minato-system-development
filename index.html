@@ -235,44 +235,114 @@
           <a href="#contact" class="btn btn--primary btn--sm">導入事例を見る &rarr;</a>
         </div>
         <div class="works__visual">
-          <div class="sb-mockup">
-            <div class="sb-mockup__browser">
-              <div class="sb-mockup__bar">
-                <span class="sb-dot"></span><span class="sb-dot"></span><span class="sb-dot"></span>
-                <span class="sb-url">smartbuyers.jp/dashboard</span>
-              </div>
-              <div class="sb-mockup__screen">
-                <div class="sb-sidebar">
-                  <div class="sb-nav-item sb-nav-item--active">ダッシュボード</div>
-                  <div class="sb-nav-item">契約一覧</div>
-                  <div class="sb-nav-item">本人確認</div>
-                  <div class="sb-nav-item">承認管理</div>
-                  <div class="sb-nav-item">レポート</div>
-                </div>
-                <div class="sb-main">
-                  <div class="sb-stats">
-                    <div class="sb-stat">
-                      <span class="sb-stat__num">248</span>
-                      <span class="sb-stat__label">今月の契約数</span>
-                    </div>
-                    <div class="sb-stat">
-                      <span class="sb-stat__num">12</span>
-                      <span class="sb-stat__label">承認待ち</span>
-                    </div>
-                    <div class="sb-stat sb-stat--green">
-                      <span class="sb-stat__num">99%</span>
-                      <span class="sb-stat__label">電子化率</span>
+          <div class="sb-scene">
+            <!-- Phone mockup -->
+            <div class="sb-phone">
+              <div class="sb-phone__frame">
+                <div class="sb-phone__notch"></div>
+                <div class="sb-phone__screen">
+                  <!-- Status bar -->
+                  <div class="sb-status">
+                    <span class="sb-status__time">9:41</span>
+                    <div class="sb-status__icons">
+                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><rect x="0" y="3" width="2" height="7" rx="0.5" fill="currentColor" opacity="0.4"/><rect x="3" y="2" width="2" height="8" rx="0.5" fill="currentColor" opacity="0.6"/><rect x="6" y="1" width="2" height="9" rx="0.5" fill="currentColor" opacity="0.8"/><rect x="9" y="0" width="2" height="10" rx="0.5" fill="currentColor"/></svg>
+                      <svg width="15" height="11" viewBox="0 0 15 11" fill="none"><path d="M7.5 2.5C9.5 2.5 11.3 3.3 12.6 4.6L14 3.2C12.3 1.5 10 0.5 7.5 0.5C5 0.5 2.7 1.5 1 3.2L2.4 4.6C3.7 3.3 5.5 2.5 7.5 2.5Z" fill="currentColor" opacity="0.4"/><path d="M7.5 5.5C8.8 5.5 10 6 10.9 6.9L12.3 5.5C11 4.2 9.4 3.5 7.5 3.5C5.6 3.5 4 4.2 2.7 5.5L4.1 6.9C5 6 6.2 5.5 7.5 5.5Z" fill="currentColor" opacity="0.7"/><circle cx="7.5" cy="9.5" r="1.5" fill="currentColor"/></svg>
+                      <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="currentColor" stroke-opacity="0.35"/><rect x="2" y="2" width="16" height="8" rx="2" fill="currentColor"/><path d="M23 4.5V7.5C23.8 7.2 24.5 6.4 24.5 6C24.5 5.6 23.8 4.8 23 4.5Z" fill="currentColor" opacity="0.4"/></svg>
                     </div>
                   </div>
-                  <div class="sb-table-head">
-                    <span>顧客名</span><span>品目</span><span>状態</span><span>日付</span>
+                  <!-- App header -->
+                  <div class="sb-app-header">
+                    <span class="sb-app-title">SmartBuyers</span>
+                    <div class="sb-app-badge">12</div>
                   </div>
-                  <div class="sb-row"><span>田中 ○○</span><span>ブランド時計</span><span class="sb-badge sb-badge--done">完了</span><span>06/11</span></div>
-                  <div class="sb-row"><span>佐藤 ○○</span><span>貴金属</span><span class="sb-badge sb-badge--wait">承認待</span><span>06/11</span></div>
-                  <div class="sb-row"><span>山田 ○○</span><span>カメラ機材</span><span class="sb-badge sb-badge--done">完了</span><span>06/10</span></div>
-                  <div class="sb-row"><span>鈴木 ○○</span><span>ブランドバッグ</span><span class="sb-badge sb-badge--prog">署名中</span><span>06/10</span></div>
+                  <!-- Summary cards -->
+                  <div class="sb-cards">
+                    <div class="sb-card sb-card--accent">
+                      <span class="sb-card__num">248</span>
+                      <span class="sb-card__label">今月の契約</span>
+                    </div>
+                    <div class="sb-card">
+                      <span class="sb-card__num" style="color:#e65100;">12</span>
+                      <span class="sb-card__label">承認待ち</span>
+                    </div>
+                    <div class="sb-card">
+                      <span class="sb-card__num">99%</span>
+                      <span class="sb-card__label">電子化率</span>
+                    </div>
+                  </div>
+                  <!-- Section label -->
+                  <div class="sb-section-label">最近の契約</div>
+                  <!-- Contract items -->
+                  <div class="sb-item">
+                    <div class="sb-item__icon sb-item__icon--watch">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 6.5V10l2.5 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="7.5" y="1" width="5" height="2.5" rx="1" stroke="currentColor" stroke-width="1.2"/></svg>
+                    </div>
+                    <div class="sb-item__info">
+                      <span class="sb-item__name">田中 ○○</span>
+                      <span class="sb-item__sub">ブランド時計</span>
+                    </div>
+                    <span class="sb-pill sb-pill--done">完了</span>
+                  </div>
+                  <div class="sb-item">
+                    <div class="sb-item__icon sb-item__icon--gold">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><polygon points="10,2 12.5,7.5 18.5,8.2 14,12.5 15.3,18.5 10,15.5 4.7,18.5 6,12.5 1.5,8.2 7.5,7.5" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="sb-item__info">
+                      <span class="sb-item__name">佐藤 ○○</span>
+                      <span class="sb-item__sub">貴金属</span>
+                    </div>
+                    <span class="sb-pill sb-pill--wait">承認待</span>
+                  </div>
+                  <div class="sb-item">
+                    <div class="sb-item__icon sb-item__icon--camera">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="11.5" r="3" stroke="currentColor" stroke-width="1.3"/><path d="M7 6l1.5-2.5h3L13 6" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="sb-item__info">
+                      <span class="sb-item__name">山田 ○○</span>
+                      <span class="sb-item__sub">カメラ機材</span>
+                    </div>
+                    <span class="sb-pill sb-pill--done">完了</span>
+                  </div>
+                  <div class="sb-item">
+                    <div class="sb-item__icon sb-item__icon--bag">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><rect x="3" y="7" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 7V5.5C7 3.6 8.3 2.5 10 2.5C11.7 2.5 13 3.6 13 5.5V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                    <div class="sb-item__info">
+                      <span class="sb-item__name">鈴木 ○○</span>
+                      <span class="sb-item__sub">ブランドバッグ</span>
+                    </div>
+                    <span class="sb-pill sb-pill--prog">署名中</span>
+                  </div>
+                  <!-- Tab bar -->
+                  <div class="sb-tabbar">
+                    <div class="sb-tab sb-tab--active">
+                      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="10" width="5" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="6" width="16" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="7.5" y="13" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.3"/></svg>
+                      <span>契約</span>
+                    </div>
+                    <div class="sb-tab">
+                      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M3 18c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                      <span>本人確認</span>
+                    </div>
+                    <div class="sb-tab">
+                      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 5h12M4 10h8M4 15h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                      <span>承認</span>
+                    </div>
+                    <div class="sb-tab">
+                      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 14l3-3 3 3 6-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      <span>レポート</span>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+            <!-- Floating accent -->
+            <div class="sb-float sb-float--1">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M5 10l4 4 6-7" stroke="#2a9d6f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>電子署名完了</span>
+            </div>
+            <div class="sb-float sb-float--2">
+              <span class="sb-float__num">99%</span>
+              <span>電子化率</span>
             </div>
           </div>
         </div>
