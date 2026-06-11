@@ -610,9 +610,16 @@ ul { list-style: none; }
 .works__visual {
   background: linear-gradient(135deg, #e8edf5 0%, #dde5f0 100%);
   border-radius: 4px;
-  overflow: visible !important;
+  overflow: hidden;
   aspect-ratio: unset !important;
-  min-height: 360px;
+  padding: 0;
+  display: block;
+}
+
+.sb-svg {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .sb-scene {
