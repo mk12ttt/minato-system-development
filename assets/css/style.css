@@ -942,9 +942,10 @@ ul { list-style: none; }
     height: 100vh;
     background: var(--navy);
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 40px;
+    padding-top: calc(var(--header-h) + 48px);
+    gap: 36px;
     transition: right 0.4s var(--ease);
     box-shadow: -8px 0 40px rgba(0,0,0,0.4);
     z-index: 100;
