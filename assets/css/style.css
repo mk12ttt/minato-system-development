@@ -565,6 +565,23 @@ ul { list-style: none; }
 }
 
 /* ===========================
+   IMAGE SECTIONS
+=========================== */
+.img-section {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  scroll-margin-top: var(--header-h);
+}
+
+.img-section picture,
+.img-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===========================
    WORKS
 =========================== */
 .works {
