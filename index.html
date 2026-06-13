@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ========== HEADER ========== -->
+  <!-- HEADER -->
   <header class="header" id="header">
     <div class="header__inner">
       <a href="#top" class="header__logo">minato system development</a>
@@ -33,200 +33,158 @@
     </div>
   </header>
 
-  <!-- ========== HERO ========== -->
-  <section id="top" class="img-section img-hero">
-    <picture>
-      <source media="(max-width: 768px)" srcset="assets/images/hero-sp.png">
-      <img src="assets/images/hero-pc.png" alt="働く時間を、価値ある時間へ。">
-    </picture>
-    <div class="img-btns">
-      <a href="#service" aria-label="事業内容を見る"></a>
-      <a href="#contact" aria-label="お問い合わせ"></a>
+  <!-- HERO -->
+  <section id="top" class="sec-hero">
+    <div class="sec-hero__overlay"></div>
+    <div class="sec-hero__content">
+      <h1 class="sec-hero__heading">働く時間を、<br>価値ある時間へ。</h1>
+      <p class="sec-hero__sub">Technology for Better Work</p>
+      <p class="sec-hero__body">私たちはシステムを開発する会社ではありません。<br>企業の成長を支える仕組みを創る会社です。<br>業務効率化による時間創造、働く人々の負担軽減、<br>そして、新しい価値を生み出す時間の創出。<br>構想から、未来へ続く改善を届けます。</p>
+      <div class="cta-row">
+        <a href="#service" class="btn btn--primary">事業内容を見る　→</a>
+        <a href="#contact" class="btn btn--outline">お問い合わせ　→</a>
+      </div>
     </div>
   </section>
 
-  <!-- ========== ABOUT / PHILOSOPHY ========== -->
-  <section id="about" class="img-section img-philosophy">
-    <picture>
-      <source media="(max-width: 768px)" srcset="assets/images/philosophy-sp.png">
-      <img src="assets/images/philosophy-pc.png" alt="PHILOSOPHY - 変わらない為に、変わり続ける。">
-    </picture>
-    <div class="img-btns">
-      <a href="#service" aria-label="事業内容を見る"></a>
-      <a href="#contact" aria-label="お問い合わせ"></a>
+  <!-- PHILOSOPHY -->
+  <section id="about" class="sec-philosophy">
+    <div class="sec-philosophy__text">
+      <p class="sec-label">PHILOSOPHY</p>
+      <h2 class="sec-heading">変わらない為に、<br>変わり続ける。</h2>
+      <span class="sec-accent"></span>
+      <p class="sec-body">歴史ある建築が未来へ受け継がれるように、<br>自然が学問とともに姿を変えるように。<br>企業もまた、変化を続けることで<br>本来の価値を守り続けることができます。</p>
+      <div class="cta-row">
+        <a href="#service" class="btn btn--primary">事業内容を見る　→</a>
+        <a href="#contact" class="btn btn--ghost">お問い合わせ　→</a>
+      </div>
+    </div>
+    <div class="sec-philosophy__photo"></div>
+  </section>
+
+  <!-- VISION -->
+  <section class="sec-vision">
+    <div class="sec-vision__overlay"></div>
+    <div class="sec-vision__content">
+      <p class="sec-label sec-label--light">VISION</p>
+      <h2 class="sec-heading sec-heading--white">高い目標を持ち、<br>一歩ずつ着実に。</h2>
+      <span class="sec-accent"></span>
+      <p class="sec-body sec-body--white">私たちは成長を追い求める会社ではありません。<br>一歩ずつ積み重ねながら、確かな価値を提供し続ける<br>会社を目指しています。<br>企業の成長は、働く人の豊かな時間、<br>社会に必要とされる仕組み、<br>それらを未来へ繋ぐ存在でありたいと考えています。</p>
+      <div class="cta-row">
+        <a href="#service" class="btn btn--primary">事業内容を見る　→</a>
+        <a href="#contact" class="btn btn--outline">お問い合わせ　→</a>
+      </div>
     </div>
   </section>
 
-  <!-- ========== VISION ========== -->
-  <div class="img-section img-vision">
-    <picture>
-      <source media="(max-width: 768px)" srcset="assets/images/vision-sp.png">
-      <img src="assets/images/vision-pc.png" alt="VISION - 高い目標を持ち、一歩ずつ着実に。">
-    </picture>
-    <div class="img-btns">
-      <a href="#service" aria-label="事業内容を見る"></a>
-      <a href="#contact" aria-label="お問い合わせ"></a>
+  <!-- GROWTH -->
+  <section class="sec-growth">
+    <div class="sec-growth__text">
+      <p class="sec-label">GROWTH</p>
+      <h2 class="sec-heading">小さな改善が、<br>大きな成長に<br>つながる。</h2>
+      <span class="sec-accent"></span>
+      <p class="sec-body">成功者とは積み重なる効率化ではありません。<br>働く人の負荷を減らし、企業の利益を高め、<br>新しい挑戦を生み出す循環をつくることで、<br>私たちは、その積み重ねを大切にしていきます。</p>
+      <div class="cta-row">
+        <a href="#service" class="btn btn--primary">事業内容を見る　→</a>
+        <a href="#contact" class="btn btn--ghost">お問い合わせ　→</a>
+      </div>
     </div>
-  </div>
-
-  <!-- ========== GROWTH ========== -->
-  <div class="img-section img-growth">
-    <picture>
-      <source media="(max-width: 768px)" srcset="assets/images/growth-sp.png">
-      <img src="assets/images/growth-pc.jpg" alt="GROWTH - 小さな改善が、大きな成長につながる。">
-    </picture>
-    <div class="img-btns">
-      <a href="#service" aria-label="事業内容を見る"></a>
-      <a href="#contact" aria-label="お問い合わせ"></a>
-    </div>
-  </div>
-
-  <!-- ========== SERVICE ========== -->
-  <section id="service" class="img-section img-service">
-    <picture>
-      <source media="(max-width: 768px)" srcset="assets/images/service-sp.png">
-      <img src="assets/images/service-pc.png" alt="SERVICE - 事業内容">
-    </picture>
+    <div class="sec-growth__photo"></div>
   </section>
 
-  <!-- ========== WORKS ========== -->
+  <!-- SERVICE -->
+  <section id="service" class="sec-service">
+    <div class="container">
+      <div class="sec-service__header">
+        <p class="sec-label">SERVICE</p>
+        <h2 class="sec-heading">事業内容</h2>
+      </div>
+      <div class="sec-service__grid">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="22" rx="3" stroke="currentColor" stroke-width="2"/><path d="M14 30l-2 4M26 30l2 4M10 34h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>システム開発</h3>
+          <p>業務に最適化したシステムを設計・開発し、業務効率化と生産性向上を支援します。</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="12" y="3" width="16" height="34" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="31" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>アプリ開発</h3>
+          <p>iOS / Androidアプリを企業から開発・運用まで一貫してサポートします。</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="2"/><path d="M4 20h32M20 4c-4 4-6 9-6 16s2 12 6 16M20 4c4 4 6 9 6 16s-2 12-6 16" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Webデザイン</h3>
+          <p>ユーザー目線のデザインで、伝わる・使いやすいWebサイトを制作します。</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M8 28l6-8 5 4 5-7 8 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="6" width="32" height="28" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>業務改善支援</h3>
+          <p>業務の課題を分析し、最適な改善プランと仕組み化をご提案します。</p>
+        </div>
+      </div>
+      <div class="sec-service__tagline">
+        <h3>複雑な業務を、シンプルな仕組みに。</h3>
+        <p>私たちは開発そのものを目的にしません。<br>業務効率化、コスト削減、売上向上につながる仕組みを設計します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS -->
   <section class="works" id="works">
     <div class="container">
       <div class="section-header">
-        <p class="label">WORKS</p>
-        <h2 class="section-title">実績紹介</h2>
+        <p class="sec-label">WORKS</p>
+        <h2 class="sec-heading">実績紹介</h2>
       </div>
       <div class="works__card">
         <div class="works__info">
           <p class="works__category">古物買取業向け電子契約システム</p>
           <h3 class="works__title">SmartBuyers</h3>
-          <p class="works__desc">
-            紙契約からデジタル運用へ。本人確認、電子署名、<br>
-            本社承認、クラウド保管。<br>
-            現場と本社をリアルタイムでつなぐ仕組みを提供しています。
-          </p>
+          <p class="works__desc">紙契約からデジタル運用へ。本人確認、電子署名、<br>本社承認、クラウド保管。<br>現場と本社をリアルタイムでつなぐ仕組みを提供しています。</p>
           <ul class="works__features">
-            <li>
-              <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              ペーパーレス化
-            </li>
-            <li>
-              <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              承認業務効率化
-            </li>
-            <li>
-              <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              保管コスト削減
-            </li>
-            <li>
-              <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              業務時間削減
-            </li>
-            <li>
-              <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              監査対応強化
-            </li>
+            <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>ペーパーレス化</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>承認業務効率化</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>保管コスト削減</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>業務時間削減</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>監査対応強化</li>
           </ul>
         </div>
         <div class="works__visual">
-          <svg class="sb-svg" viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg class="sb-svg" viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#e8eef5"/>
-                <stop offset="100%" stop-color="#dde5f0"/>
-              </linearGradient>
-              <linearGradient id="frameGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#d0d0d0"/>
-                <stop offset="40%" stop-color="#b8b8b8"/>
-                <stop offset="100%" stop-color="#a0a0a0"/>
-              </linearGradient>
-              <linearGradient id="baseGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#c8c8c8"/>
-                <stop offset="100%" stop-color="#a8a8a8"/>
-              </linearGradient>
-              <linearGradient id="phoneFrameGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#3a3a3c"/>
-                <stop offset="100%" stop-color="#1c1c1e"/>
-              </linearGradient>
-              <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
-                <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="rgba(13,33,55,0.22)"/>
-              </filter>
-              <filter id="phoneShadow" x="-30%" y="-10%" width="160%" height="140%">
-                <feDropShadow dx="4" dy="10" stdDeviation="12" flood-color="rgba(13,33,55,0.3)"/>
-              </filter>
-              <clipPath id="screenClip">
-                <rect x="76" y="22" width="390" height="244" rx="2"/>
-              </clipPath>
-              <clipPath id="phoneClip">
-                <rect x="491" y="68" width="96" height="208" rx="2"/>
-              </clipPath>
+              <linearGradient id="bgGrad2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e8eef5"/><stop offset="100%" stop-color="#dde5f0"/></linearGradient>
+              <linearGradient id="frameGrad2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d0d0d0"/><stop offset="100%" stop-color="#a0a0a0"/></linearGradient>
+              <filter id="sh2"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="rgba(13,33,55,0.22)"/></filter>
             </defs>
-            <rect width="640" height="340" fill="url(#bgGrad)"/>
-            <ellipse cx="275" cy="318" rx="200" ry="10" fill="rgba(13,33,55,0.13)"/>
-            <g filter="url(#shadow)">
-              <rect x="60" y="14" width="420" height="268" rx="10" fill="url(#frameGrad)"/>
-              <rect x="68" y="20" width="406" height="256" rx="6" fill="#111"/>
-              <circle cx="271" cy="24" r="2.5" fill="#2a2a2c"/>
+            <rect width="640" height="340" fill="url(#bgGrad2)"/>
+            <g filter="url(#sh2)">
+              <rect x="60" y="14" width="420" height="268" rx="10" fill="url(#frameGrad2)"/>
               <rect x="76" y="28" width="390" height="244" rx="2" fill="#f4f6f9"/>
-              <g clip-path="url(#screenClip)">
-                <rect x="76" y="28" width="76" height="244" fill="#0d2137"/>
-                <rect x="90" y="42" width="12" height="12" rx="3" fill="#2a9d6f"/>
-                <rect x="106" y="42" width="32" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
-                <rect x="86" y="70" width="76" height="20" fill="rgba(42,157,111,0.2)"/>
-                <rect x="76" y="70" width="3" height="20" fill="#2a9d6f"/>
-                <rect x="86" y="76" width="8" height="8" rx="1.5" fill="rgba(255,255,255,0.6)"/>
-                <rect x="98" y="78" width="36" height="4" rx="2" fill="rgba(255,255,255,0.7)"/>
-                <rect x="86" y="99" width="8" height="8" rx="1.5" fill="rgba(255,255,255,0.25)"/>
-                <rect x="98" y="101" width="30" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
-                <rect x="86" y="117" width="8" height="8" rx="1.5" fill="rgba(255,255,255,0.25)"/>
-                <rect x="98" y="119" width="26" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
-                <rect x="152" y="28" width="314" height="24" fill="white"/>
-                <rect x="162" y="35" width="60" height="5" rx="2.5" fill="#0d2137" opacity="0.7"/>
-                <rect x="162" y="62" width="88" height="46" rx="4" fill="white"/>
-                <rect x="162" y="62" width="88" height="3" rx="1.5" fill="#2a9d6f"/>
-                <rect x="170" y="72" width="28" height="8" rx="2" fill="#0d2137" opacity="0.8"/>
-                <rect x="256" y="62" width="88" height="46" rx="4" fill="white"/>
-                <rect x="256" y="62" width="88" height="3" rx="1.5" fill="#dce4ee"/>
-                <rect x="264" y="72" width="20" height="8" rx="2" fill="#e65100" opacity="0.8"/>
-                <rect x="350" y="62" width="88" height="46" rx="4" fill="white"/>
-                <rect x="350" y="62" width="88" height="3" rx="1.5" fill="#dce4ee"/>
-                <rect x="358" y="72" width="24" height="8" rx="2" fill="#0d2137" opacity="0.8"/>
-                <rect x="162" y="118" width="170" height="80" rx="4" fill="white"/>
-                <rect x="172" y="174" width="14" height="18" rx="2" fill="#c8d9ec"/>
-                <rect x="190" y="163" width="14" height="29" rx="2" fill="#c8d9ec"/>
-                <rect x="226" y="156" width="14" height="36" rx="2" fill="#c8d9ec"/>
-                <rect x="262" y="148" width="14" height="44" rx="2" fill="#2a9d6f"/>
-                <rect x="298" y="160" width="14" height="32" rx="2" fill="#c8d9ec"/>
-                <rect x="338" y="118" width="128" height="80" rx="4" fill="white"/>
-                <rect x="338" y="118" width="128" height="13" fill="#f0f4f8"/>
-                <rect x="346" y="122" width="30" height="4" rx="2" fill="#8a8a85" opacity="0.6"/>
-                <rect x="346" y="136" width="32" height="4" rx="2" fill="#0d2137" opacity="0.7"/>
-                <rect x="346" y="151" width="28" height="4" rx="2" fill="#0d2137" opacity="0.7"/>
-                <rect x="346" y="166" width="34" height="4" rx="2" fill="#0d2137" opacity="0.7"/>
-                <rect x="162" y="206" width="304" height="58" rx="4" fill="white"/>
-                <polyline points="170,252 200,242 230,248 270,232 310,238 350,225 390,230 430,218 450,224" fill="none" stroke="#2a9d6f" stroke-width="2" stroke-linecap="round"/>
-              </g>
-              <rect x="56" y="282" width="428" height="12" rx="4" fill="url(#baseGrad)"/>
-              <rect x="225" y="284" width="90" height="8" rx="2" fill="rgba(0,0,0,0.07)"/>
-            </g>
-            <g filter="url(#phoneShadow)">
-              <ellipse cx="539" cy="322" rx="52" ry="6" fill="rgba(13,33,55,0.15)"/>
-              <rect x="483" y="52" width="112" height="240" rx="18" fill="url(#phoneFrameGrad)"/>
-              <rect x="487" y="56" width="104" height="232" rx="14" fill="#111"/>
-              <rect x="491" y="68" width="96" height="208" rx="4" fill="#f4f6f9"/>
-              <rect x="517" y="60" width="44" height="8" rx="4" fill="#111"/>
-              <g clip-path="url(#phoneClip)">
-                <rect x="491" y="68" width="96" height="20" fill="#0d2137"/>
-                <rect x="495" y="96" width="40" height="28" rx="4" fill="#2a9d6f"/>
-                <rect x="541" y="96" width="40" height="28" rx="4" fill="white"/>
-                <rect x="495" y="132" width="86" height="18" rx="3" fill="white"/>
-                <rect x="495" y="154" width="86" height="18" rx="3" fill="white"/>
-                <rect x="495" y="176" width="86" height="18" rx="3" fill="white"/>
-                <rect x="495" y="198" width="86" height="18" rx="3" fill="white"/>
-                <rect x="491" y="248" width="96" height="28" fill="white"/>
-                <rect x="502" y="255" width="14" height="3" rx="1.5" fill="#2a9d6f"/>
-                <rect x="518" y="278" width="40" height="3" rx="1.5" fill="#d0d0cc"/>
-              </g>
+              <rect x="76" y="28" width="76" height="244" fill="#0d2137"/>
+              <rect x="90" y="42" width="12" height="12" rx="3" fill="#2a9d6f"/>
+              <rect x="86" y="70" width="76" height="20" fill="rgba(42,157,111,0.2)"/>
+              <rect x="76" y="70" width="3" height="20" fill="#2a9d6f"/>
+              <rect x="152" y="28" width="314" height="24" fill="white"/>
+              <rect x="162" y="35" width="60" height="5" rx="2.5" fill="#0d2137" opacity="0.7"/>
+              <rect x="162" y="62" width="88" height="46" rx="4" fill="white"/>
+              <rect x="162" y="62" width="88" height="3" rx="1.5" fill="#2a9d6f"/>
+              <rect x="170" y="72" width="28" height="8" rx="2" fill="#0d2137" opacity="0.8"/>
+              <rect x="256" y="62" width="88" height="46" rx="4" fill="white"/>
+              <rect x="162" y="118" width="170" height="80" rx="4" fill="white"/>
+              <rect x="262" y="148" width="14" height="44" rx="2" fill="#2a9d6f"/>
+              <rect x="172" y="174" width="14" height="18" rx="2" fill="#c8d9ec"/>
+              <rect x="190" y="163" width="14" height="29" rx="2" fill="#c8d9ec"/>
+              <rect x="338" y="118" width="128" height="80" rx="4" fill="white"/>
+              <rect x="162" y="206" width="304" height="58" rx="4" fill="white"/>
+              <polyline points="170,252 210,238 250,245 290,228 330,235 370,220 410,226 450,212" fill="none" stroke="#2a9d6f" stroke-width="2" stroke-linecap="round"/>
+              <rect x="56" y="282" width="428" height="12" rx="4" fill="#c0c0c0"/>
             </g>
           </svg>
         </div>
@@ -234,53 +192,26 @@
     </div>
   </section>
 
-  <!-- ========== MESSAGE + COMPANY + CONTACT ========== -->
+  <!-- BOTTOM: MESSAGE + COMPANY + CONTACT -->
   <section class="bottom-section">
     <div class="container">
       <div class="bottom-section__grid">
-
         <div class="message">
-          <p class="label">MESSAGE</p>
+          <p class="sec-label">MESSAGE</p>
           <h2>代表メッセージ</h2>
-          <p>
-            私たちは技術を売る会社ではありません。<br>
-            本当に提供したいのは、企業が成長するための時間です。<br><br>
-            効率化によって生まれた時間は、<br>
-            新しい挑戦へ。家族との時間へ。<br>
-            仲間との時間へ。企業の未来へ。<br>
-            技術はそのための手段であると考えています。<br><br>
-            一つひとつの課題に真摯に向き合い、<br>
-            横浜から価値ある仕組みを届けてまいります。
-          </p>
+          <p>私たちは技術を売る会社ではありません。<br>本当に提供したいのは、企業が成長するための時間です。<br><br>効率化によって生まれた時間は、<br>新しい挑戦へ。家族との時間へ。<br>仲間との時間へ。企業の未来へ。<br>技術はそのための手段であると考えています。<br><br>一つひとつの課題に真摯に向き合い、<br>横浜から価値ある仕組みを届けてまいります。</p>
         </div>
-
         <div class="company" id="company">
-          <p class="label">COMPANY</p>
+          <p class="sec-label">COMPANY</p>
           <h2>会社概要</h2>
           <table class="company__table">
-            <tr>
-              <th>会社名</th>
-              <td>minato system development LLC</td>
-            </tr>
-            <tr>
-              <th>所在地</th>
-              <td>神奈川県横浜市西区浅間町1-4-3</td>
-            </tr>
-            <tr>
-              <th>事業内容</th>
-              <td>
-                システム開発及び販売<br>
-                アプリケーション開発及び販売<br>
-                Webデザイン<br>
-                業務改善コンサルティング<br>
-                DX推進支援
-              </td>
-            </tr>
+            <tr><th>会社名</th><td>minato system development LLC</td></tr>
+            <tr><th>所在地</th><td>神奈川県横浜市西区浅間町1-4-3</td></tr>
+            <tr><th>事業内容</th><td>システム開発及び販売<br>アプリケーション開発及び販売<br>Webデザイン<br>業務改善コンサルティング<br>DX推進支援</td></tr>
           </table>
         </div>
-
         <div class="contact" id="contact">
-          <p class="label">CONTACT</p>
+          <p class="sec-label">CONTACT</p>
           <h2>お問い合わせ</h2>
           <p>業務改善のご相談からシステム開発まで、<br>真摯に対応いたします。</p>
           <a href="contact.html" class="btn btn--primary">お問い合わせフォームへ</a>
@@ -289,12 +220,11 @@
             info@minato-system-development.com
           </p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__inner">
       <p class="footer__logo">minato system development LLC</p>
