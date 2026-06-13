@@ -238,25 +238,37 @@ ul { list-style: none; }
    PHILOSOPHY
 =========================== */
 .sec-philosophy {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  position: relative;
   min-height: 100vh;
-  scroll-margin-top: var(--header-h);
-}
-.sec-philosophy__text {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: calc(var(--header-h) + 80px) 72px 80px;
-  background: var(--white);
-}
-.sec-philosophy__text .cta-row { margin-top: auto; padding-top: 40px; }
-.sec-philosophy__photo {
+  align-items: center;
   background-image: url('../images/philosophy-pc.png');
   background-size: cover;
-  background-position: right center;
-  min-height: 480px;
+  background-position: center;
+  scroll-margin-top: var(--header-h);
 }
+.sec-philosophy__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    rgba(255,255,255,0.92) 0%,
+    rgba(255,255,255,0.75) 45%,
+    rgba(255,255,255,0.30) 68%,
+    rgba(255,255,255,0.05) 100%
+  );
+}
+.sec-philosophy__text {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 680px;
+  padding: calc(var(--header-h) + 80px) 80px 80px;
+  display: flex;
+  flex-direction: column;
+}
+.sec-philosophy__text .cta-row { margin-top: 40px; }
+.sec-philosophy__photo { display: none; }
 
 /* ===========================
    VISION
@@ -296,23 +308,38 @@ ul { list-style: none; }
    GROWTH
 =========================== */
 .sec-growth {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 80vh;
-  scroll-margin-top: var(--header-h);
-}
-.sec-growth__text {
+  position: relative;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: calc(var(--header-h) + 80px) 72px 80px;
-  background: var(--white);
-}
-.sec-growth__text .cta-row { margin-top: auto; padding-top: 40px; }
-.sec-growth__photo {
+  align-items: center;
   background-image: url('../images/growth-pc.jpg');
   background-size: cover;
-  background-position: right center;
+  background-position: center;
+  scroll-margin-top: var(--header-h);
+}
+.sec-growth__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    rgba(255,255,255,0.92) 0%,
+    rgba(255,255,255,0.75) 45%,
+    rgba(255,255,255,0.30) 68%,
+    rgba(255,255,255,0.05) 100%
+  );
+}
+.sec-growth__text {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 680px;
+  padding: calc(var(--header-h) + 80px) 80px 80px;
+  display: flex;
+  flex-direction: column;
+}
+.sec-growth__text .cta-row { margin-top: 40px; }
+.sec-growth__photo {
+  display: none;
   min-height: 400px;
 }
 
@@ -479,30 +506,15 @@ ul { list-style: none; }
 
   /* Philosophy SP */
   .sec-philosophy {
-    display: block;
-    position: relative;
-    min-height: 100svh;
-  }
-  .sec-philosophy__photo {
-    position: absolute;
-    inset: 0;
     background-image: url('../images/philosophy-sp.png');
-    background-position: center top;
-    min-height: 0;
-  }
-  .sec-philosophy__photo::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,0.78);
+    background-position: center;
+    min-height: 100svh;
+    align-items: flex-start;
   }
   .sec-philosophy__text {
-    position: relative;
-    z-index: 2;
-    background: transparent;
+    max-width: 100%;
     padding: calc(var(--header-h) + 56px) 24px 64px;
     min-height: 100svh;
-    justify-content: flex-start;
   }
   .sec-philosophy__text .cta-row { margin-top: auto; padding-top: 48px; }
 
@@ -520,30 +532,15 @@ ul { list-style: none; }
 
   /* Growth SP */
   .sec-growth {
-    display: block;
-    position: relative;
-    min-height: 100svh;
-  }
-  .sec-growth__photo {
-    position: absolute;
-    inset: 0;
     background-image: url('../images/growth-sp.png');
-    background-position: center top;
-    min-height: 0;
-  }
-  .sec-growth__photo::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,0.80);
+    background-position: center;
+    min-height: 100svh;
+    align-items: flex-start;
   }
   .sec-growth__text {
-    position: relative;
-    z-index: 2;
-    background: transparent;
+    max-width: 100%;
     padding: calc(var(--header-h) + 56px) 24px 64px;
     min-height: 100svh;
-    justify-content: flex-start;
   }
   .sec-growth__text .cta-row { margin-top: auto; padding-top: 48px; }
 
