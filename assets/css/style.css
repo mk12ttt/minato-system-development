@@ -584,31 +584,26 @@ ul { list-style: none; }
 }
 
 /* ── Crop baked-in nav from top of each image ──
-   margin-top % is relative to container WIDTH.
-   hero/vision/service-pc  (1672×941): nav ≈ 55px → 55/1672 = 3.3%
-   philosophy-pc           (1536×1024): nav ≈ 65px → 65/1536 = 4.2%
-   growth-pc               (1125×374):  nav ≈ 35px → 35/1125 = 3.1%
-   sp portrait 941×1672:   nav ≈ 80px → 80/941  = 8.5%
-   sp portrait 853×1844:   nav ≈ 110px → 110/853 = 12.9%
+   Percentage is relative to container WIDTH so it scales with the image.
+   Values are intentionally generous to ensure the nav is fully hidden.
 */
 .img-hero img,
 .img-vision img,
-.img-service img  { margin-top: -3.3%; }
-.img-philosophy img { margin-top: -4.2%; }
-.img-growth img   { margin-top: -3.1%; }
+.img-service img  { margin-top: -6%; }
+.img-philosophy img { margin-top: -7%; }
+.img-growth img   { margin-top: -8%; }
 
 @media (max-width: 768px) {
   .img-hero img,
   .img-growth img,
-  .img-service img  { margin-top: -8.5%; }
+  .img-service img  { margin-top: -11%; }
   .img-philosophy img,
-  .img-vision img   { margin-top: -12.9%; }
+  .img-vision img   { margin-top: -15%; }
 }
 
 /* ── Transparent click overlays for in-image buttons ──
-   position: absolute on .img-section (overflow: hidden + position: relative)
-   Overlays are invisible but give real click/hover targets.
-   top/left/width/height are % of the visible container dimensions.
+   Using bottom-based positioning so they stay anchored to the
+   bottom of the visible image regardless of how much is cropped at top.
 */
 .img-btns {
   position: absolute;
@@ -625,67 +620,61 @@ ul { list-style: none; }
   -webkit-tap-highlight-color: transparent;
 }
 
-/* ── Hero PC button positions ── */
-.img-hero .img-btns a:nth-child(1) {
-  top: 82%; left: 5.5%; width: 14%; height: 7%;
+/* ── PC button positions (bottom-anchored) ── */
+.img-hero .img-btns a:nth-child(1),
+.img-vision .img-btns a:nth-child(1) {
+  bottom: 11%; left: 5.5%; width: 14%; height: 7%;
 }
-.img-hero .img-btns a:nth-child(2) {
-  top: 82%; left: 20.5%; width: 13%; height: 7%;
+.img-hero .img-btns a:nth-child(2),
+.img-vision .img-btns a:nth-child(2) {
+  bottom: 11%; left: 20.5%; width: 13%; height: 7%;
 }
 
-/* ── Philosophy PC button positions ── */
 .img-philosophy .img-btns a:nth-child(1) {
-  top: 90%; left: 3.5%; width: 14%; height: 6%;
+  bottom: 5%; left: 3.5%; width: 14%; height: 6%;
 }
 .img-philosophy .img-btns a:nth-child(2) {
-  top: 90%; left: 18.5%; width: 13%; height: 6%;
+  bottom: 5%; left: 18.5%; width: 13%; height: 6%;
 }
 
-/* ── Vision PC button positions ── */
-.img-vision .img-btns a:nth-child(1) {
-  top: 82%; left: 5.5%; width: 14%; height: 7%;
+.img-growth .img-btns a:nth-child(1) {
+  bottom: 10%; left: 5.5%; width: 14%; height: 18%;
 }
-.img-vision .img-btns a:nth-child(2) {
-  top: 82%; left: 20.5%; width: 13%; height: 7%;
+.img-growth .img-btns a:nth-child(2) {
+  bottom: 10%; left: 21%; width: 13%; height: 18%;
 }
-
-/* ── Growth PC: buttons not visible in image crop, skip ── */
-.img-growth .img-btns { display: none; }
 
 @media (max-width: 768px) {
   /* ── Hero SP: side-by-side buttons ── */
   .img-hero .img-btns a:nth-child(1) {
-    top: 75%; left: 4%; width: 43%; height: 5%;
+    bottom: 15%; left: 4%; width: 43%; height: 5%;
   }
   .img-hero .img-btns a:nth-child(2) {
-    top: 75%; left: 52%; width: 43%; height: 5%;
+    bottom: 15%; left: 52%; width: 43%; height: 5%;
   }
 
   /* ── Philosophy SP: stacked full-width buttons ── */
   .img-philosophy .img-btns a:nth-child(1) {
-    top: 88%; left: 3%; width: 94%; height: 4.5%;
+    bottom: 9.5%; left: 3%; width: 94%; height: 4.5%;
   }
   .img-philosophy .img-btns a:nth-child(2) {
-    top: 93%; left: 3%; width: 94%; height: 4.5%;
+    bottom: 4.5%; left: 3%; width: 94%; height: 4.5%;
   }
 
   /* ── Vision SP: stacked full-width buttons ── */
   .img-vision .img-btns a:nth-child(1) {
-    top: 81%; left: 3%; width: 94%; height: 4.5%;
+    bottom: 15%; left: 3%; width: 94%; height: 4.5%;
   }
   .img-vision .img-btns a:nth-child(2) {
-    top: 86.5%; left: 3%; width: 94%; height: 4.5%;
+    bottom: 9.5%; left: 3%; width: 94%; height: 4.5%;
   }
 
   /* ── Growth SP: stacked full-width buttons ── */
-  .img-growth .img-btns {
-    display: block;
-  }
   .img-growth .img-btns a:nth-child(1) {
-    top: 82%; left: 3%; width: 94%; height: 4.5%;
+    bottom: 13%; left: 3%; width: 94%; height: 4.5%;
   }
   .img-growth .img-btns a:nth-child(2) {
-    top: 87.5%; left: 3%; width: 94%; height: 4.5%;
+    bottom: 7.5%; left: 3%; width: 94%; height: 4.5%;
   }
 }
 
