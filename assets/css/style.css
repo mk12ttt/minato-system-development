@@ -396,13 +396,12 @@ ul { list-style: none; }
 =========================== */
 .works { background: var(--off-white); padding: 100px 0; }
 .works__card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
+  display: block;
   background: var(--navy);
   padding: 64px;
   border-radius: 4px;
+  max-width: 760px;
+  margin: 0 auto;
 }
 .works__category { font-size: 0.78rem; letter-spacing: 0.1em; color: var(--emerald-light); margin-bottom: 8px; }
 .works__title { font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 500; color: var(--white); margin-bottom: 20px; }
