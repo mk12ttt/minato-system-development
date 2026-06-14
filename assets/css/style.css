@@ -410,8 +410,8 @@ ul { list-style: none; }
 .works__features { display: flex; flex-direction: column; gap: 8px; }
 .works__features li { display: flex; align-items: center; gap: 10px; font-size: 0.83rem; color: rgba(255,255,255,0.85); }
 .works__features svg { width: 18px; height: 18px; color: var(--emerald-light); flex-shrink: 0; }
-.works__visual { background: linear-gradient(135deg,#e8edf5 0%,#dde5f0 100%); border-radius: 4px; overflow: hidden; }
-.sb-svg { width: 100%; height: auto; display: block; }
+.works__visual { border-radius: 4px; overflow: hidden; }
+.works__photo { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 4px; }
 
 /* ===========================
    BOTTOM SECTION
