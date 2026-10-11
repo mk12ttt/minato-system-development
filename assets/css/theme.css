@@ -702,3 +702,34 @@ body { color: #3e4450; }
   /* フッターの社名が2行に折れないよう、スマホでは字間を詰める */
   .footer__logo { letter-spacing: 0.08em; white-space: nowrap; }
 }
+
+/* ==========================================================
+   サグラダ・ファミリア（スマホ）：写真の上に白い帯が出ないよう、
+   写真をセクションの一番上から始める（2026-10-11 変更）。
+   以前はヘッダーの高さぶん写真を下げていたが、指でスクロールすると
+   その部分が白い帯として見えていた。文字の位置は変えない。
+========================================================== */
+@media (max-width: 768px) {
+  .sec-philosophy {
+    padding-top: 0;
+    background-image: url('../images/philosophy-sp.jpg');
+    background-origin: padding-box;
+    background-size: cover;
+    background-position: center top;
+  }
+  .sec-philosophy__text {
+    padding-top: calc(var(--header-h) + 56px);
+    min-height: 100svh;
+  }
+  /* 一番上は白を薄めにして、写真の上端が白く飛ばないようにする */
+  .sec-philosophy__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.45) 0%,
+      rgba(255,255,255,0.72) 22%,
+      rgba(255,255,255,0.72) 46%,
+      rgba(255,255,255,0.16) 62%,
+      rgba(255,255,255,0) 78%
+    );
+  }
+}
