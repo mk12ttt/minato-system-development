@@ -118,6 +118,9 @@ body { font-weight: 400; }
   .service-card__icon { margin-top: 26px; }
   .service-card h3 { font-size: 1.1rem; white-space: normal; }
   .service-card p { font-size: 0.86rem; }
+  /* 最後の項目の下線と、下の見出しの上線が2本並んで間が空いていたので、1本にして詰める */
+  .sec-service__grid { margin-bottom: 56px; }
+  .sec-service__tagline { border-top: none; padding-top: 0; }
 
   .works__card { grid-template-columns: 1fr; gap: 36px; padding: 36px 24px; }
 
