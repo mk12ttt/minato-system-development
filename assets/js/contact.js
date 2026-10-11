@@ -5,7 +5,7 @@ const rules = {
   name:     { el: document.getElementById('name'),     err: document.getElementById('nameError'),     check: v => v.trim().length > 0 },
   email:    { el: document.getElementById('email'),    err: document.getElementById('emailError'),    check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
   category: { el: document.getElementById('category'), err: document.getElementById('categoryError'), check: v => v !== '' },
-  message:  { el: document.getElementById('message'),  err: document.getElementById('messageError'),  check: v => v.trim().length > 10 },
+  message:  { el: document.getElementById('message'),  err: document.getElementById('messageError'),  check: v => v.trim().length >= 10 },
   privacy:  { el: document.getElementById('privacy'),  err: document.getElementById('privacyError'),  check: v => document.getElementById('privacy').checked },
 };
 
@@ -24,6 +24,17 @@ Object.keys(rules).forEach(key => {
     if (rules[key].el.classList.contains('error')) validate(key);
   });
 });
+
+// お問い合わせ内容の文字数。10文字に届いたら色を変える。
+const messageEl    = document.getElementById('message');
+const messageCount = document.getElementById('messageCount');
+const updateCount = () => {
+  const n = messageEl.value.trim().length;
+  messageCount.textContent = `${n}文字（10文字以上）`;
+  messageCount.classList.toggle('ok', n >= 10);
+};
+messageEl.addEventListener('input', updateCount);
+updateCount();
 
 // 送信は FormSubmit（https://formsubmit.co）経由で、下のアドレスにメールで届く。
 // 初回の送信時に、このアドレスへ「有効化」のメールが届く。それを承認するまでは届かない。

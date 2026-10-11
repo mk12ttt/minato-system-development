@@ -99,11 +99,16 @@ ul { list-style: none; }
   white-space: nowrap;
 }
 .btn--primary { background: var(--emerald); color: var(--white); }
-.btn--primary:hover { background: var(--emerald-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(42,157,111,0.35); }
 .btn--outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.65); }
-.btn--outline:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
 .btn--ghost { background: transparent; color: var(--navy); border: 1px solid rgba(13,33,55,0.45); }
-.btn--ghost:hover { background: rgba(13,33,55,0.05); border-color: var(--navy); }
+/* マウスのある端末だけ。スマホでは押したあとも浮いたまま残ってしまうため */
+@media (hover: hover) {
+  .btn--primary:hover { background: var(--emerald-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(42,157,111,0.35); }
+  .btn--outline:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+  .btn--ghost:hover { background: rgba(13,33,55,0.05); border-color: var(--navy); }
+}
+/* 押した瞬間の手応え（スマホ含む） */
+.btn:active { transform: translateY(1px); }
 
 /* ===========================
    HEADER
@@ -600,4 +605,141 @@ ul { list-style: none; }
 
   .works__card { grid-template-columns: 1fr; padding: 40px 28px; gap: 40px; }
   .footer__nav { flex-wrap: wrap; justify-content: center; gap: 20px; }
+}
+
+/* ===========================
+   INTERACTIONS & MOTION（2026-10-11 追加）
+=========================== */
+/* メニューから飛んだとき、見出しが固定ヘッダーの裏に隠れないようにする */
+.works, .message, .company, .contact { scroll-margin-top: calc(var(--header-h) + 40px); }
+
+/* キーボード操作のときだけ、いまどこにいるかを枠で示す */
+a:focus-visible, button:focus-visible, select:focus-visible {
+  outline: 2px solid var(--emerald-light);
+  outline-offset: 3px;
+}
+
+/* メールアドレス・住所のリンク */
+.contact__email a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.map-link { color: inherit; display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.map-link__label {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--emerald);
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  padding: 0 6px;
+  line-height: 1.7;
+}
+@media (hover: hover) {
+  .map-link:hover { color: var(--emerald); }
+}
+
+/* PC のメニュー：いま見ている場所に下線 */
+.header__nav a { position: relative; }
+.header__nav a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 1px;
+  background: var(--emerald-light);
+  transform: scaleX(0);
+  transition: transform 0.4s var(--ease);
+}
+.header__nav a.is-current { color: var(--white); }
+.header__nav a.is-current::after { transform: scaleX(1); }
+
+/* ページの先頭に戻るボタン */
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  z-index: 90;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(13,33,55,0.88);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(13,33,55,0.25);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.to-top svg { width: 18px; height: 18px; }
+.to-top.visible { opacity: 1; transform: none; pointer-events: auto; }
+@media (hover: hover) {
+  .to-top:hover { background: var(--emerald); }
+}
+
+/* トップ画面の「SCROLL」案内 */
+.scroll-cue {
+  position: absolute;
+  left: 0; right: 0;
+  margin: 0 auto;
+  width: max-content;
+  bottom: 24px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-size: 0.66rem;
+  letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.75);
+}
+.scroll-cue span {
+  position: relative;
+  width: 1px;
+  height: 44px;
+  background: rgba(255,255,255,0.25);
+  overflow: hidden;
+}
+.scroll-cue span::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--white);
+  animation: scrollCue 2.2s var(--ease) infinite;
+}
+@keyframes scrollCue {
+  0%   { transform: translateY(-100%); }
+  60%  { transform: translateY(100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* トップの見出しを、開いた瞬間に順に浮かび上がらせる */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+.sec-hero__heading { animation: riseIn 1.1s var(--ease) 0.15s both; }
+.sec-hero__sub     { animation: riseIn 1.1s var(--ease) 0.45s both; }
+.sec-hero__body    { animation: riseIn 1.1s var(--ease) 0.65s both; }
+.sec-hero .cta-row { animation: riseIn 1.1s var(--ease) 0.85s both; }
+.scroll-cue        { animation: riseIn 1.1s var(--ease) 1.2s both; }
+
+/* スクロールで現れる（main.js が .reveal を付ける。JS が無ければ最初から見える） */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* 「視差効果を減らす」設定の人には動きを出さない */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .sec-hero__heading, .sec-hero__sub, .sec-hero__body, .sec-hero .cta-row, .scroll-cue { animation: none; }
+  .scroll-cue span::after { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
 }

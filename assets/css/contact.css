@@ -271,8 +271,10 @@
   transition: transform 0.3s var(--ease);
 }
 
-.btn--lg:hover svg {
-  transform: translateX(4px);
+@media (hover: hover) {
+  .btn--lg:hover svg {
+    transform: translateX(4px);
+  }
 }
 
 /* ===========================
@@ -456,3 +458,19 @@
     padding: 56px 24px 80px;
   }
 }
+
+/* お問い合わせ内容：エラーと文字数を同じ行に並べる */
+.form-hint-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.form-count {
+  margin-left: auto;
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.form-count.ok { color: var(--emerald); }

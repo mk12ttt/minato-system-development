@@ -15,7 +15,7 @@
   <meta property="og:image" content="https://mk12ttt.github.io/minato-system-development/assets/images/ogp.jpg">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261011">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
   <header class="header" id="header">
     <div class="header__inner">
       <a href="#top" class="header__logo">minato system development</a>
-      <button class="header__hamburger" id="hamburger" aria-label="メニュー">
+      <button class="header__hamburger" id="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>
       </button>
       <nav class="header__nav" id="nav">
@@ -55,10 +55,11 @@
         <a href="#contact" class="btn btn--outline">お問い合わせ　→</a>
       </div>
     </div>
+    <a href="#about" class="scroll-cue" aria-label="下へスクロール">SCROLL<span></span></a>
   </section>
 
   <!-- PHILOSOPHY -->
-  <section id="about" class="sec-philosophy">
+  <section id="about" class="sec-philosophy" data-nav="about">
     <div class="sec-philosophy__overlay"></div>
     <div class="sec-philosophy__text">
       <p class="sec-label">PHILOSOPHY</p>
@@ -74,7 +75,7 @@
   </section>
 
   <!-- VISION -->
-  <section class="sec-vision">
+  <section class="sec-vision" data-nav="about">
     <div class="sec-vision__overlay"></div>
     <div class="sec-vision__content">
       <p class="sec-label sec-label--light">VISION</p>
@@ -89,7 +90,7 @@
   </section>
 
   <!-- GROWTH -->
-  <section class="sec-growth">
+  <section class="sec-growth" data-nav="about">
     <div class="sec-growth__overlay"></div>
     <div class="sec-growth__text">
       <p class="sec-label">GROWTH</p>
@@ -105,7 +106,7 @@
   </section>
 
   <!-- SERVICE -->
-  <section id="service" class="sec-service">
+  <section id="service" class="sec-service" data-nav="service">
     <div class="container">
       <div class="sec-service__header">
         <p class="sec-label">SERVICE</p>
@@ -157,7 +158,7 @@
   </section>
 
   <!-- WORKS -->
-  <section class="works" id="works">
+  <section class="works" id="works" data-nav="works">
     <div class="container">
       <div class="section-header">
         <p class="sec-label">WORKS</p>
@@ -185,28 +186,28 @@
   <section class="bottom-section">
     <div class="container">
       <div class="bottom-section__grid">
-        <div class="message">
+        <div class="message" data-nav="none">
           <p class="sec-label">MESSAGE</p>
           <h2>代表メッセージ</h2>
           <p>私たちは技術を売る会社ではありません。<br>本当に提供したいのは、<br class="sp-br">企業が成長するための時間です。<br><br>効率化によって生まれた時間は、<br>新しい挑戦へ。家族との時間へ。<br>仲間との時間へ。企業の未来へ。<br>技術はそのための手段であると考えています。<br><br>一つひとつの課題に真摯に向き合い、<br>横浜から価値ある仕組みを届けてまいります。</p>
         </div>
-        <div class="company" id="company">
+        <div class="company" id="company" data-nav="company">
           <p class="sec-label">COMPANY</p>
           <h2>会社概要</h2>
           <table class="company__table">
             <tr><th>会社名</th><td>minato system development LLC</td></tr>
-            <tr><th>所在地</th><td>神奈川県横浜市西区浅間町1-4-3</td></tr>
+            <tr><th>所在地</th><td><a href="https://www.google.com/maps/search/?api=1&query=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E6%B5%9C%E5%B8%82%E8%A5%BF%E5%8C%BA%E6%B5%85%E9%96%93%E7%94%BA1-4-3" class="map-link" target="_blank" rel="noopener">神奈川県横浜市西区浅間町1-4-3<span class="map-link__label">地図</span></a></td></tr>
             <tr><th>事業内容</th><td>システム開発及び販売<br>アプリケーション開発及び販売<br>Webデザイン<br>業務改善コンサルティング<br>DX推進支援</td></tr>
           </table>
         </div>
-        <div class="contact" id="contact">
+        <div class="contact" id="contact" data-nav="contact">
           <p class="sec-label">CONTACT</p>
           <h2>お問い合わせ</h2>
           <p>業務改善のご相談からシステム開発まで、<br>真摯に対応いたします。</p>
           <a href="contact.html" class="btn btn--primary">お問い合わせフォームへ</a>
           <p class="contact__email">
             <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 7l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            msd1230.info@gmail.com
+            <a href="mailto:msd1230.info@gmail.com">msd1230.info@gmail.com</a>
           </p>
         </div>
       </div>
@@ -229,6 +230,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=20261011"></script>
 </body>
 </html>

@@ -15,8 +15,8 @@
   <meta property="og:image" content="https://mk12ttt.github.io/minato-system-development/assets/images/ogp.jpg">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/contact.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261011">
+  <link rel="stylesheet" href="assets/css/contact.css?v=20261011">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
   <header class="header scrolled" id="header">
     <div class="header__inner">
       <a href="index.html" class="header__logo">minato system development</a>
-      <button class="header__hamburger" id="hamburger" aria-label="メニュー">
+      <button class="header__hamburger" id="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>
       </button>
       <nav class="header__nav" id="nav">
@@ -64,24 +64,24 @@
 
             <div class="form-group">
               <label class="form-label" for="company">会社名</label>
-              <input type="text" id="company" name="company" class="form-input" placeholder="例）株式会社○○">
+              <input type="text" id="company" name="company" class="form-input" autocomplete="organization" placeholder="例）株式会社○○">
             </div>
 
             <div class="form-group">
               <label class="form-label" for="name">お名前 <span class="required">必須</span></label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="例）山田 太郎" required>
+              <input type="text" id="name" name="name" class="form-input" autocomplete="name" placeholder="例）山田 太郎" required>
               <p class="form-error" id="nameError">お名前を入力してください</p>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="email">メールアドレス <span class="required">必須</span></label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="例）info@example.com" required>
+              <input type="email" id="email" name="email" class="form-input" autocomplete="email" inputmode="email" placeholder="例）info@example.com" required>
               <p class="form-error" id="emailError">正しいメールアドレスを入力してください</p>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="phone">電話番号</label>
-              <input type="tel" id="phone" name="phone" class="form-input" placeholder="例）045-000-0000">
+              <input type="tel" id="phone" name="phone" class="form-input" autocomplete="tel" inputmode="tel" placeholder="例）045-000-0000">
             </div>
 
             <div class="form-group">
@@ -104,7 +104,10 @@
             <div class="form-group">
               <label class="form-label" for="message">お問い合わせ内容 <span class="required">必須</span></label>
               <textarea id="message" name="message" class="form-textarea" rows="7" placeholder="ご相談内容・ご質問をご記入ください" required></textarea>
-              <p class="form-error" id="messageError">お問い合わせ内容を入力してください</p>
+              <div class="form-hint-row">
+                <p class="form-error" id="messageError">10文字以上で入力してください</p>
+                <p class="form-count" id="messageCount" aria-live="polite">0文字（10文字以上）</p>
+              </div>
             </div>
 
             <div class="form-group form-group--privacy">
@@ -159,7 +162,7 @@
           <div class="contact-info__block">
             <p class="label">ADDRESS</p>
             <p class="contact-info__value">
-              神奈川県横浜市西区<br>浅間町1-4-3
+              <a href="https://www.google.com/maps/search/?api=1&query=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E6%B5%9C%E5%B8%82%E8%A5%BF%E5%8C%BA%E6%B5%85%E9%96%93%E7%94%BA1-4-3" class="map-link" target="_blank" rel="noopener">神奈川県横浜市西区<br>浅間町1-4-3<span class="map-link__label">地図</span></a>
             </p>
           </div>
 
@@ -197,7 +200,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/contact.js"></script>
+  <script src="assets/js/main.js?v=20261011"></script>
+  <script src="assets/js/contact.js?v=20261011"></script>
 </body>
 </html>
