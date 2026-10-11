@@ -457,8 +457,12 @@ ul { list-style: none; }
 /* ===========================
    RESPONSIVE — mobile
 =========================== */
+/* スマホだけで効く改行。1文字だけ次の行に残るのを防ぐ */
+.sp-br { display: none; }
+
 @media (max-width: 768px) {
   :root { --header-h: 60px; }
+  .sp-br { display: inline; }
 
   .container { padding: 0 24px; }
   .header__inner { padding: 0 24px; }
@@ -516,11 +520,27 @@ ul { list-style: none; }
     min-height: 100svh;
   }
   .sec-philosophy__text .cta-row { margin-top: auto; padding-top: 48px; }
+  /* 左からの白ぼかしだと塔の左半分が消えるため、スマホは上から下へ薄くする */
+  .sec-philosophy__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.80) 0%,
+      rgba(255,255,255,0.66) 50%,
+      rgba(255,255,255,0.20) 72%,
+      rgba(255,255,255,0.05) 100%
+    );
+  }
+
+  /* 同じボタンが毎画面続くため、スマホではヒーローとお問い合わせ以外は出さない */
+  .sec-philosophy__text .cta-row,
+  .sec-vision__content .cta-row,
+  .sec-growth__text .cta-row { display: none; }
 
   /* Vision SP */
+  /* スマホ用の縦長写真は富士山が左端で切れるため、横長写真の山頂を中央に合わせる */
   .sec-vision {
-    background-image: url('../images/vision-sp.png');
-    background-position: center top;
+    background-image: url('../images/vision-pc.png');
+    background-position: 11% center;
     min-height: 100svh;
   }
   .sec-vision__content {
