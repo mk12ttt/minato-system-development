@@ -1,0 +1,140 @@
+/* ==========================================================
+   試作2：今の構成・写真・明朝の見出しはそのままに、細部だけ整える
+   （style.css の上にかぶせる。参考：LayerX / SmartHR / モンスターラボ）
+========================================================== */
+
+.preview-badge {
+  position: fixed; right: 12px; top: calc(var(--header-h) + 8px); z-index: 300;
+  padding: 2px 12px; border-radius: 99px; background: #fff4cc; color: #6b5200;
+  font-size: 11px; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  pointer-events: none; white-space: nowrap;
+}
+
+/* ---------- 読みやすさ：本文を少し太く・濃く・大きく ---------- */
+body { font-weight: 400; }
+.sec-body { font-size: 0.95rem; color: #3d4452; }
+.sec-body--white { color: rgba(255,255,255,0.92); }
+.sec-hero__body { font-size: 0.95rem; color: rgba(255,255,255,0.92); }
+.message p, .contact > p { font-size: 0.92rem; color: #3d4452; }
+.company__table td { font-size: 0.9rem; color: #3d4452; }
+
+/* 見出しは明朝のまま、少しだけ太く */
+.sec-heading, .sec-hero__heading, .message h2, .company h2, .sec-service__tagline h3 { font-weight: 600; }
+
+/* 英字ラベルの前に短い線（どこからが新しい区切りかを示す） */
+.sec-label { display: inline-flex; align-items: center; gap: 12px; }
+.sec-label::before { content: ''; width: 20px; height: 1px; background: currentColor; }
+.section-header .sec-label, .sec-service__header .sec-label { justify-content: center; }
+
+/* ---------- ボタン：角を丸め、右に丸い矢印 ---------- */
+.btn {
+  border-radius: 99px;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 7px 7px 7px 26px;
+  min-height: 52px;
+  font-weight: 500;
+}
+.btn__arrow {
+  position: relative; flex-shrink: 0;
+  width: 38px; height: 38px; border-radius: 50%; overflow: hidden;
+  background: rgba(255,255,255,0.95);
+}
+.btn__arrow::before, .btn__arrow::after {
+  content: ''; position: absolute; inset: 0;
+  background: no-repeat center / 15px 15px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M2 8h11M9 4l4 4-4 4' stroke='%232a9d6f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  transition: transform 0.45s var(--ease);
+}
+.btn__arrow::after { transform: translateX(-120%); }
+.btn--outline .btn__arrow { background: rgba(255,255,255,0.14); }
+.btn--outline .btn__arrow::before, .btn--outline .btn__arrow::after,
+.btn--ghost .btn__arrow::before, .btn--ghost .btn__arrow::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M2 8h11M9 4l4 4-4 4' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.btn--ghost .btn__arrow { background: var(--navy); }
+@media (hover: hover) {
+  .btn:hover { transform: none; box-shadow: none; }
+  .btn:hover .btn__arrow::before { transform: translateX(120%); }
+  .btn:hover .btn__arrow::after { transform: none; }
+}
+
+/* ---------- 事業内容：番号を付けて、項目名をはっきり ---------- */
+.sec-service__grid { counter-reset: svc; }
+.service-card { counter-increment: svc; }
+.service-card h3 { font-size: 1.15rem; font-weight: 600; }
+.service-card h3::before {
+  content: counter(svc, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-feature-settings: "lnum";
+  color: var(--emerald);
+  margin-bottom: 2px;
+}
+.service-card p { font-size: 0.88rem; color: #4d5462; }
+
+/* ---------- 実績：契約の流れを図で見せる ---------- */
+.works__card { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; max-width: 980px; border-radius: 16px; }
+.works__flow { position: relative; display: grid; gap: 14px; }
+.works__flow::before {
+  content: ''; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 2px;
+  background: linear-gradient(var(--emerald-light), rgba(52,196,132,0.2));
+}
+.works__flow li { position: relative; display: grid; grid-template-columns: 16px 1fr; column-gap: 16px; grid-template-areas: "dot t" "dot s"; align-items: center; }
+.works__dot { grid-area: dot; width: 16px; height: 16px; border-radius: 50%; background: var(--navy); border: 3px solid var(--emerald-light); position: relative; z-index: 1; }
+.works__flow b { grid-area: t; font-family: var(--font-jp-serif); font-weight: 600; color: #fff; font-size: 1rem; line-height: 1.5; }
+.works__flow small { grid-area: s; font-size: 0.78rem; color: rgba(255,255,255,0.62); line-height: 1.5; }
+
+/* ---------- お問い合わせ：紺の箱にして目立たせる ---------- */
+.contact {
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 48px 40px;
+  color: rgba(255,255,255,0.88);
+  position: relative;
+  overflow: hidden;
+}
+.contact::after {
+  content: ''; position: absolute; right: -100px; top: -100px; width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(52,196,132,0.3), rgba(52,196,132,0) 70%); pointer-events: none;
+}
+.contact .sec-label { color: var(--emerald-light); }
+.contact h2 { color: #fff; }
+.contact > p { color: rgba(255,255,255,0.85); }
+.contact__email { color: rgba(255,255,255,0.75); position: relative; z-index: 1; }
+.contact .btn { position: relative; z-index: 1; }
+
+/* ---------- スマホ ---------- */
+.float-cta { display: none; }
+@media (max-width: 768px) {
+  /* 本文の改行位置（1行22文字前後）を崩さない大きさにとどめる */
+  .sec-body { font-size: 0.9rem; line-height: 2; }
+  .sec-hero__body { font-size: 0.875rem; }
+  .cta-row .btn { justify-content: space-between; padding: 7px 7px 7px 24px; }
+
+  .service-card { gap: 18px; padding: 26px 0; }
+  .service-card__icon { margin-top: 26px; }
+  .service-card h3 { font-size: 1.1rem; white-space: normal; }
+  .service-card p { font-size: 0.86rem; }
+
+  .works__card { grid-template-columns: 1fr; gap: 36px; padding: 36px 24px; }
+
+  .contact { padding: 40px 24px; }
+  .contact .btn { width: 100%; }
+
+  /* 親指の届く位置に問い合わせボタン（最初の画面を過ぎたら出す） */
+  .float-cta {
+    display: inline-flex; align-items: center; gap: 14px;
+    position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 95;
+    padding: 6px 6px 6px 22px; min-height: 50px; border-radius: 99px;
+    background: var(--emerald); color: #fff; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em;
+    box-shadow: 0 10px 28px rgba(42,157,111,0.35);
+    transform: translate(-50%, 160%); transition: transform 0.45s var(--ease);
+  }
+  .float-cta.visible { transform: translate(-50%, 0); }
+  .float-cta .btn__arrow { width: 38px; height: 38px; }
+  /* 先頭へ戻るボタンと重ならないよう少し上へ */
+  .to-top { bottom: calc(82px + env(safe-area-inset-bottom)); }
+}
