@@ -187,7 +187,7 @@ ul { list-style: none; }
   min-height: 100svh;
   display: flex;
   align-items: center;
-  background-image: url('../images/hero-pc.png');
+  background-image: url('../images/hero-pc.jpg');
   background-size: cover;
   background-position: center top;
   scroll-margin-top: 0;
@@ -242,7 +242,7 @@ ul { list-style: none; }
   min-height: 100svh;
   display: flex;
   align-items: center;
-  background-image: url('../images/philosophy-pc.png');
+  background-image: url('../images/philosophy-pc.jpg');
   background-size: cover;
   background-position: center;
   scroll-margin-top: var(--header-h);
@@ -278,7 +278,7 @@ ul { list-style: none; }
   min-height: 100svh;
   display: flex;
   align-items: center;
-  background-image: url('../images/vision-pc.png');
+  background-image: url('../images/vision-pc.jpg');
   background-size: cover;
   background-position: center top;
 }
@@ -488,7 +488,7 @@ ul { list-style: none; }
 
   /* Hero SP */
   .sec-hero {
-    background-image: url('../images/hero-sp.png');
+    background-image: url('../images/hero-sp.jpg');
     background-position: center top;
     align-items: flex-start;
     min-height: 100svh;
@@ -515,7 +515,7 @@ ul { list-style: none; }
     /* 1枚目：写真の上端の直線が目立たないよう、空の色からぼかしてつなぐ */
     background-image:
       linear-gradient(to bottom, #648ee0 0, #648ee0 80px, rgba(100,142,224,0) 150px),
-      url('../images/philosophy-sp.png');
+      url('../images/philosophy-sp.jpg');
     background-repeat: no-repeat;
     background-origin: content-box;
     background-size: 100% 100%, cover;
@@ -550,7 +550,7 @@ ul { list-style: none; }
   /* Vision SP */
   /* スマホ用の縦長写真は富士山が左端で切れるため、横長写真の山頂を中央に合わせる */
   .sec-vision {
-    background-image: url('../images/vision-pc.png');
+    background-image: url('../images/vision-pc.jpg');
     background-position: 11% center;
     min-height: 100svh;
   }
@@ -562,7 +562,7 @@ ul { list-style: none; }
 
   /* Growth SP */
   .sec-growth {
-    background-image: url('../images/growth-sp.png');
+    background-image: url('../images/growth-sp.jpg');
     background-position: center;
     min-height: 100svh;
     align-items: flex-start;

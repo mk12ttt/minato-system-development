@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>お問い合わせ | minato system development LLC</title>
   <meta name="description" content="業務改善のご相談からシステム開発まで、お気軽にお問い合わせください。">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="minato system development LLC">
+  <meta property="og:title" content="お問い合わせ | minato system development LLC">
+  <meta property="og:description" content="業務改善のご相談からシステム開発まで、お気軽にお問い合わせください。">
+  <meta property="og:url" content="https://mk12ttt.github.io/minato-system-development/contact.html">
+  <meta property="og:image" content="https://mk12ttt.github.io/minato-system-development/assets/images/ogp.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/contact.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,12 +31,16 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="header__nav" id="nav">
+        <button class="nav-close-btn" id="navClose" aria-label="閉じる">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
         <a href="index.html#about">ABOUT</a>
         <a href="index.html#service">SERVICE</a>
         <a href="index.html#works">WORKS</a>
         <a href="index.html#company">COMPANY</a>
         <a href="contact.html" class="active">CONTACT</a>
       </nav>
+      <div class="nav-overlay" id="navOverlay"></div>
     </div>
   </header>
 
@@ -98,17 +112,21 @@
                 <input type="checkbox" id="privacy" name="privacy" required>
                 <span class="form-checkbox__box"></span>
                 <span class="form-checkbox__text">
-                  <a href="#" class="form-link">プライバシーポリシー</a>に同意する
+                  <a href="privacy.html" class="form-link" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する
                 </span>
               </label>
               <p class="form-error" id="privacyError">プライバシーポリシーへの同意が必要です</p>
             </div>
+
+            <!-- 迷惑メール対策（人には見えない項目） -->
+            <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
             <div class="form-submit">
               <button type="submit" class="btn btn--primary btn--lg" id="submitBtn">
                 送信する
                 <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
+              <p class="form-error form-error--send" id="sendError" role="alert">送信できませんでした。時間をおいてもう一度お試しいただくか、<a href="mailto:msd1230.info@gmail.com">msd1230.info@gmail.com</a> へ直接メールでお送りください。</p>
             </div>
 
           </form>
@@ -173,8 +191,9 @@
         <a href="index.html#works">WORKS</a>
         <a href="index.html#company">COMPANY</a>
         <a href="contact.html">CONTACT</a>
+        <a href="privacy.html">PRIVACY</a>
       </nav>
-      <p class="footer__copy">&copy; 2024 minato system development LLC. All Rights Reserved.</p>
+      <p class="footer__copy">&copy; 2026 minato system development LLC. All Rights Reserved.</p>
     </div>
   </footer>
 

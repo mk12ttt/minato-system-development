@@ -24,6 +24,15 @@
   text-align: center;
 }
 
+/* 見出しの上の英字ラベル。紺の地に紺の文字で見えなくなっていた */
+.page-hero .label {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  color: var(--emerald-light);
+  margin-bottom: 12px;
+}
+
 .page-hero__title {
   font-family: 'Noto Serif JP', serif;
   font-size: clamp(2rem, 4vw, 3rem);
@@ -166,6 +175,26 @@
 
 .form-error.visible {
   display: block;
+}
+
+/* 送信に失敗したとき。届いていないことと、メールでの送り方を伝える */
+.form-error--send {
+  margin-top: 16px;
+  font-size: 0.83rem;
+  line-height: 1.9;
+}
+.form-error--send a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* 迷惑メール対策の隠し項目 */
+.form-honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
 }
 
 /* CHECKBOX */
@@ -364,5 +393,66 @@
 
   .contact-info {
     flex-direction: column;
+  }
+}
+
+/* ===========================
+   PRIVACY POLICY
+=========================== */
+.policy-body {
+  padding: 80px 24px 100px;
+  background: var(--off-white);
+}
+
+.policy {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  line-height: 2;
+  color: var(--gray-700);
+}
+
+.policy h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin: 48px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.policy ul {
+  list-style: disc;
+  padding-left: 1.4em;
+  margin-top: 8px;
+}
+
+.policy a {
+  color: var(--emerald);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-all;
+}
+
+.policy__contact {
+  display: grid;
+  grid-template-columns: 6em 1fr;
+  gap: 4px 16px;
+}
+
+.policy__contact dt {
+  color: var(--gray-500);
+}
+
+.policy__date {
+  margin-top: 48px;
+  text-align: right;
+  color: var(--gray-500);
+}
+
+@media (max-width: 640px) {
+  .policy-body {
+    padding: 56px 24px 80px;
   }
 }
