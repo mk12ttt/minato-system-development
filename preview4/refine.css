@@ -146,3 +146,18 @@ body { font-weight: 400; }
 @media (max-width: 768px) {
   .scroll-cue { display: none; }
 }
+
+/* PC：VISION の文字を右へ寄せ、左の富士山に重ならないようにする。暗いグラデーションも右側にかける */
+@media (min-width: 769px) {
+  .sec-vision { justify-content: flex-end; }
+  .sec-vision__content { margin-left: auto; margin-right: 0; }
+  .sec-vision__overlay {
+    background: linear-gradient(
+      250deg,
+      rgba(13,33,55,0.86) 0%,
+      rgba(13,33,55,0.70) 40%,
+      rgba(13,33,55,0.28) 64%,
+      rgba(13,33,55,0.04) 100%
+    );
+  }
+}
