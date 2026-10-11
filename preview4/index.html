@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>minato system development LLC（試作4）</title>
+  <meta name="description" content="働く時間を、価値ある時間へ。業務改善を通じて企業の成長と働く人々の豊かな時間を創出する。">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="minato system development LLC">
+  <meta property="og:title" content="minato system development LLC">
+  <meta property="og:description" content="働く時間を、価値ある時間へ。業務改善を通じて企業の成長と働く人々の豊かな時間を創出する。">
+  <meta property="og:url" content="https://mk12ttt.github.io/minato-system-development/">
+  <meta property="og:image" content="https://mk12ttt.github.io/minato-system-development/assets/images/ogp.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20261011">
+  <link rel="stylesheet" href="refine.css?v=2">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&display=swap">
+  <link rel="stylesheet" href="luxe.css?v=3">
+  <link rel="stylesheet" href="menu.css?v=2">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="tech.css?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="preview-badge">試作4（最先端感）</div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#top" class="header__logo">minato system development</a>
+      <button class="header__hamburger menu-btn" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+        <span class="menu-btn__text">MENU</span>
+        <span class="menu-btn__lines" aria-hidden="true"><i></i><i></i></span>
+      </button>
+      <nav class="header__nav" id="nav" aria-label="メニュー">
+        <div class="menu-top">
+          <span class="menu-top__brand">minato system development</span>
+          <button class="nav-close-btn menu-close" id="navClose" aria-label="メニューを閉じる">
+            <span>CLOSE</span><i aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="menu-links">
+          <a href="#about" class="menu-link" style="--i:0">
+            <span class="menu-link__no">01</span>
+            <span class="menu-link__label"><span class="menu-link__en">About</span><span class="menu-link__jp">私たちについて</span></span>
+          </a>
+          <a href="#service" class="menu-link" style="--i:1">
+            <span class="menu-link__no">02</span>
+            <span class="menu-link__label"><span class="menu-link__en">Service</span><span class="menu-link__jp">事業内容</span></span>
+          </a>
+          <a href="#works" class="menu-link" style="--i:2">
+            <span class="menu-link__no">03</span>
+            <span class="menu-link__label"><span class="menu-link__en">Works</span><span class="menu-link__jp">実績紹介</span></span>
+          </a>
+          <a href="#company" class="menu-link" style="--i:3">
+            <span class="menu-link__no">04</span>
+            <span class="menu-link__label"><span class="menu-link__en">Company</span><span class="menu-link__jp">会社概要</span></span>
+          </a>
+          <a href="#contact" class="menu-link" style="--i:4">
+            <span class="menu-link__no">05</span>
+            <span class="menu-link__label"><span class="menu-link__en">Contact</span><span class="menu-link__jp">お問い合わせ</span></span>
+          </a>
+        </div>
+        <div class="menu-foot">
+          <a href="../contact.html" class="btn btn--primary">お問い合わせフォームへ<span class="btn__arrow" aria-hidden="true"></span></a>
+          <p class="menu-foot__info">
+            <a href="mailto:msd1230.info@gmail.com">msd1230.info@gmail.com</a><br>
+            神奈川県横浜市西区浅間町1-4-3
+          </p>
+        </div>
+      </nav>
+      <div class="nav-overlay" id="navOverlay"></div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="sec-hero">
+    <div class="sec-hero__overlay"></div>
+    <div class="sec-hero__content">
+      <h1 class="sec-hero__heading">働く時間を、<br>価値ある時間へ。</h1>
+      <p class="sec-hero__sub">Technology for Better Work</p>
+      <p class="sec-hero__body">私たちはシステムを開発する会社ではありません。<br>企業の成長を支える仕組みを創る会社です。<br>業務効率化による時間創造、働く人々の負担軽減、<br>そして、新しい価値を生み出す時間の創出。<br>構想から、未来へ続く改善を届けます。</p>
+      <div class="cta-row">
+        <a href="#service" class="btn btn--primary">事業内容を見る<span class="btn__arrow" aria-hidden="true"></span></a>
+        <a href="#contact" class="btn btn--outline">お問い合わせ<span class="btn__arrow" aria-hidden="true"></span></a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="下へスクロール">SCROLL<span></span></a>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section id="about" class="sec-philosophy" data-nav="about">
+    <div class="sec-philosophy__overlay"></div>
+    <div class="sec-philosophy__text">
+      <p class="sec-label">PHILOSOPHY</p>
+      <h2 class="sec-heading">変わらない為に、<br>変わり続ける。</h2>
+      <span class="sec-accent"></span>
+      <p class="sec-body">歴史ある建築が未来へ受け継がれるように、<br>自然が学問とともに姿を変えるように。<br>企業もまた、変化を続けることで<br>本来の価値を守り続けることができます。</p>
+      <div class="cta-row">
+        <a href="#service" class="btn btn--primary">事業内容を見る<span class="btn__arrow" aria-hidden="true"></span></a>
+        <a href="#contact" class="btn btn--ghost">お問い合わせ<span class="btn__arrow" aria-hidden="true"></span></a>
+      </div>
+    </div>
+    <div class="sec-philosophy__photo"></div>
+  </section>
+
+  <!-- VISION -->
+  <section class="sec-vision" data-nav="about">
+    <div class="sec-vision__overlay"></div>
+    <div class="sec-vision__content">
+      <p class="sec-label sec-label--light">VISION</p>
+      <h2 class="sec-heading sec-heading--white">高い目標を持ち、<br>一歩ずつ着実に。</h2>
+      <span class="sec-accent"></span>
+      <p class="sec-body sec-body--white">私たちは成長を追い求める会社ではありません。<br>一歩ずつ積み重ねながら、<br class="sp-br">確かな価値を提供し続ける<br>会社を目指しています。<br>企業の成長は、働く人の豊かな時間、<br>社会に必要とされる仕組み、<br>それらを未来へ繋ぐ存在で<br class="sp-br">ありたいと考えています。</p>
+      <div class="cta-row">
+        <a href="#service" class="btn btn--primary">事業内容を見る<span class="btn__arrow" aria-hidden="true"></span></a>
+        <a href="#contact" class="btn btn--outline">お問い合わせ<span class="btn__arrow" aria-hidden="true"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWTH -->
+  <section class="sec-growth" data-nav="about">
+    <div class="sec-growth__overlay"></div>
+    <div class="sec-growth__text">
+      <p class="sec-label">GROWTH</p>
+      <h2 class="sec-heading">小さな改善が、<br>大きな成長に<br>つながる。</h2>
+      <span class="sec-accent"></span>
+      <p class="sec-body">成長とは、<br class="sp-br">効率化を積み重ねることだけではありません。<br>働く人の負荷を減らし、企業の利益を高め、<br>新しい挑戦を生み出す循環をつくることで、<br>私たちは、その積み重ねを大切にしていきます。</p>
+      <div class="cta-row">
+        <a href="#service" class="btn btn--primary">事業内容を見る<span class="btn__arrow" aria-hidden="true"></span></a>
+        <a href="#contact" class="btn btn--ghost">お問い合わせ<span class="btn__arrow" aria-hidden="true"></span></a>
+      </div>
+    </div>
+    <div class="sec-growth__photo"></div>
+  </section>
+
+  <!-- SERVICE -->
+  <section id="service" class="sec-service" data-nav="service">
+    <div class="container">
+      <div class="sec-service__header">
+        <p class="sec-label">SERVICE</p>
+        <h2 class="sec-heading">事業内容</h2>
+      </div>
+      <div class="sec-service__grid">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="22" rx="3" stroke="currentColor" stroke-width="2"/><path d="M14 30l-2 4M26 30l2 4M10 34h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="service-card__text">
+          <h3>システム開発</h3>
+          <p>業務に最適化したシステムを設計・開発し、業務効率化と生産性向上を支援します。</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="12" y="3" width="16" height="34" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="31" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="service-card__text">
+          <h3>アプリ開発</h3>
+          <p>iOS / Androidアプリを企画から開発・運用まで一貫してサポートします。</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="2"/><path d="M4 20h32M20 4c-4 4-6 9-6 16s2 12 6 16M20 4c4 4 6 9 6 16s-2 12-6 16" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <div class="service-card__text">
+          <h3>Webデザイン</h3>
+          <p>ユーザー目線のデザインで、伝わる・使いやすいWebサイトを制作します。</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M8 28l6-8 5 4 5-7 8 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="6" width="32" height="28" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <div class="service-card__text">
+          <h3>業務改善支援</h3>
+          <p>業務の課題を分析し、最適な改善プランと仕組み化をご提案します。</p>
+          </div>
+        </div>
+      </div>
+      <div class="sec-service__tagline">
+        <h3>複雑な業務を、<br class="sp-br">シンプルな仕組みに。</h3>
+        <p>私たちは開発そのものを目的にしません。<br>業務効率化、コスト削減、<br class="sp-br">売上向上につながる仕組みを設計します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 英字が流れる帯 -->
+  <div class="marquee" aria-hidden="true"><div class="marquee__track"><span>Technology for Better Work</span><span>Minato Mirai, Yokohama</span><span>System &amp; App Development</span><span>DX / Business Improvement</span><span>Technology for Better Work</span><span>Minato Mirai, Yokohama</span><span>System &amp; App Development</span><span>DX / Business Improvement</span></div></div>
+
+  <!-- WORKS -->
+  <section class="works" id="works" data-nav="works">
+    <div class="container">
+      <div class="section-header">
+        <p class="sec-label">WORKS</p>
+        <h2 class="sec-heading">実績紹介</h2>
+      </div>
+      <div class="works__card">
+        <div class="works__info">
+          <p class="works__category">古物買取業向け電子契約システム</p>
+          <h3 class="works__title">SmartBuyers</h3>
+          <p class="works__desc">紙契約からデジタル運用へ。<br class="sp-br">本人確認、電子署名、<br>本社承認、クラウド保管。<br>現場と本社をリアルタイムでつなぐ<br class="sp-br">仕組みを提供しています。</p>
+          <ul class="works__features">
+            <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>ペーパーレス化</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>承認業務効率化</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>保管コスト削減</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>業務時間削減</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>監査対応強化</li>
+          </ul>
+        </div>
+        <ol class="works__flow" aria-label="SmartBuyers の契約の流れ">
+          <li><span class="works__dot"></span><b>来店・受付</b><small>現場スタッフがアプリで登録</small></li>
+          <li><span class="works__dot"></span><b>本人確認</b><small>身分証をその場で読み取り</small></li>
+          <li><span class="works__dot"></span><b>電子署名</b><small>お客様が画面にサイン</small></li>
+          <li><span class="works__dot"></span><b>本社承認</b><small>本社がリアルタイムで確認</small></li>
+          <li><span class="works__dot"></span><b>クラウド保管</b><small>契約書を安全に保存</small></li>
+        </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM: MESSAGE + COMPANY + CONTACT -->
+  <section class="bottom-section">
+    <div class="container">
+      <div class="bottom-section__grid">
+        <div class="message" data-nav="none">
+          <p class="sec-label">MESSAGE</p>
+          <h2>代表メッセージ</h2>
+          <p>私たちは技術を売る会社ではありません。<br>本当に提供したいのは、<br class="sp-br">企業が成長するための時間です。<br><br>効率化によって生まれた時間は、<br>新しい挑戦へ。家族との時間へ。<br>仲間との時間へ。企業の未来へ。<br>技術はそのための手段であると考えています。<br><br>一つひとつの課題に真摯に向き合い、<br>横浜から価値ある仕組みを届けてまいります。</p>
+        </div>
+        <div class="company" id="company" data-nav="company">
+          <p class="sec-label">COMPANY</p>
+          <h2>会社概要</h2>
+          <table class="company__table">
+            <tr><th>会社名</th><td>minato system development LLC</td></tr>
+            <tr><th>所在地</th><td><a href="https://www.google.com/maps/search/?api=1&query=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E6%A8%AA%E6%B5%9C%E5%B8%82%E8%A5%BF%E5%8C%BA%E6%B5%85%E9%96%93%E7%94%BA1-4-3" class="map-link" target="_blank" rel="noopener">神奈川県横浜市西区浅間町1-4-3<span class="map-link__label">地図</span></a></td></tr>
+            <tr><th>事業内容</th><td>システム開発及び販売<br>アプリケーション開発及び販売<br>Webデザイン<br>業務改善コンサルティング<br>DX推進支援</td></tr>
+          </table>
+        </div>
+        <div class="contact" id="contact" data-nav="contact">
+          <p class="sec-label">CONTACT</p>
+          <h2>お問い合わせ</h2>
+          <p>業務改善のご相談からシステム開発まで、<br>真摯に対応いたします。</p>
+          <a href="../contact.html" class="btn btn--primary">お問い合わせフォームへ<span class="btn__arrow" aria-hidden="true"></span></a>
+          <p class="contact__email">
+            <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 7l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <a href="mailto:msd1230.info@gmail.com">msd1230.info@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__logo">minato system development LLC</p>
+      <nav class="footer__nav">
+        <a href="#about">ABOUT</a>
+        <a href="#service">SERVICE</a>
+        <a href="#works">WORKS</a>
+        <a href="#company">COMPANY</a>
+        <a href="#contact">CONTACT</a>
+        <a href="../privacy.html">PRIVACY</a>
+      </nav>
+      <p class="footer__copy">&copy; 2026 minato system development LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <a href="../contact.html" class="float-cta" id="floatCta">お問い合わせ<span class="btn__arrow" aria-hidden="true"></span></a>
+
+  <script src="../assets/js/main.js?v=20261011"></script>
+  <script src="preview4.js?v=1"></script>
+  <script>
+    // 画面下の相談ボタン：最初の画面を過ぎたら出し、お問い合わせ欄が見えたら引っ込める
+    (() => {
+      const btn = document.getElementById('floatCta');
+      const hero = document.querySelector('.sec-hero');
+      const contact = document.getElementById('contact');
+      const update = () => {
+        const past = hero.getBoundingClientRect().bottom < 0;
+        const near = contact.getBoundingClientRect().top < window.innerHeight;
+        btn.classList.toggle('visible', past && !near);
+      };
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+</body>
+</html>
