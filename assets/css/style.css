@@ -487,9 +487,17 @@ ul { list-style: none; }
   .header__hamburger.active { opacity: 0; pointer-events: none; }
 
   /* Hero SP */
+  /* みなとみらいと分かるよう、横長写真の観覧車とホテルの側を使う。
+     文字やボタンに隠れないよう 200px 下げてボタンの下に出し、
+     上にできるすき間は写真の空の色からぼかしてつなぐ */
   .sec-hero {
-    background-image: url('../images/hero-sp.jpg');
-    background-position: center top;
+    background-color: #3c74c0;
+    background-image:
+      linear-gradient(to bottom, #3c74c0 0, #3c74c0 190px, rgba(60,116,192,0) 260px),
+      url('../images/hero-pc.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%, cover;
+    background-position: 0 0, 84% 200px;
     align-items: flex-start;
     min-height: 100svh;
   }
