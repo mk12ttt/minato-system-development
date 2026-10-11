@@ -571,13 +571,16 @@ body { color: #3e4450; }
    スマホ
 ========================================================== */
 @media (max-width: 768px) {
-  /* トップの写真：上のすき間を減らす。写真を少し大きくし、観覧車はボタンの下のまま */
+  /* トップの写真：運河に映る明かりまで写るよう、写真の下端を画面の下にそろえる（2026-10-11 変更）。
+     高さ 420px にするとビル群・観覧車・ホテル・運河がひと通り入り、観覧車はボタンのすぐ下に来る。
+     写真より上は空の色で塗る。画面の高さが違っても写真とつながるよう、下から測って塗る */
   .sec-hero {
+    background-color: #3f76c2;
     background-image:
-      linear-gradient(to bottom, #2d5fa6 0, #2d5fa6 70px, rgba(45,95,166,0) 140px),
+      linear-gradient(to top, rgba(63,118,194,0) 0, rgba(63,118,194,0) 330px, #3f76c2 410px, #3f76c2 100%),
       url('../images/hero-pc.jpg');
-    background-size: 100% 100%, auto 128%;
-    background-position: 0 0, 87% 90px;
+    background-size: 100% 100%, auto 420px;
+    background-position: 0 0, 92% 100%;
   }
 
   /* サグラダ・ファミリア：写真をヘッダーのすぐ下から始める（80px の追加の余白をやめる） */
