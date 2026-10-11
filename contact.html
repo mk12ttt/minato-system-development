@@ -15,30 +15,60 @@
   <meta property="og:image" content="https://mk12ttt.github.io/minato-system-development/assets/images/ogp.jpg">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261011">
-  <link rel="stylesheet" href="assets/css/contact.css?v=20261011">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261011b">
+  <link rel="stylesheet" href="assets/css/contact.css?v=20261011b">
+  <link rel="stylesheet" href="assets/css/theme.css?v=20261011b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Shippori+Mincho:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body class="contact-page">
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <!-- ========== HEADER ========== -->
   <header class="header scrolled" id="header">
     <div class="header__inner">
       <a href="index.html" class="header__logo">minato system development</a>
-      <button class="header__hamburger" id="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span><span></span>
+      <button class="header__hamburger menu-btn" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+        <span class="menu-btn__text">MENU</span>
+        <span class="menu-btn__lines" aria-hidden="true"><i></i><i></i></span>
       </button>
-      <nav class="header__nav" id="nav">
-        <button class="nav-close-btn" id="navClose" aria-label="閉じる">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </button>
-        <a href="index.html#about">ABOUT</a>
-        <a href="index.html#service">SERVICE</a>
-        <a href="index.html#works">WORKS</a>
-        <a href="index.html#company">COMPANY</a>
-        <a href="contact.html" class="active">CONTACT</a>
+      <nav class="header__nav" id="nav" aria-label="メニュー">
+        <div class="menu-top">
+          <span class="menu-top__brand">minato system development</span>
+          <button class="nav-close-btn menu-close" id="navClose" aria-label="メニューを閉じる">
+            <span>CLOSE</span><i aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="menu-links">
+          <a href="index.html#about" class="menu-link" style="--i:0">
+            <span class="menu-link__no">01</span>
+            <span class="menu-link__label"><span class="menu-link__en">About</span><span class="menu-link__jp">私たちについて</span></span>
+          </a>
+          <a href="index.html#service" class="menu-link" style="--i:1">
+            <span class="menu-link__no">02</span>
+            <span class="menu-link__label"><span class="menu-link__en">Service</span><span class="menu-link__jp">事業内容</span></span>
+          </a>
+          <a href="index.html#works" class="menu-link" style="--i:2">
+            <span class="menu-link__no">03</span>
+            <span class="menu-link__label"><span class="menu-link__en">Works</span><span class="menu-link__jp">実績紹介</span></span>
+          </a>
+          <a href="index.html#company" class="menu-link" style="--i:3">
+            <span class="menu-link__no">04</span>
+            <span class="menu-link__label"><span class="menu-link__en">Company</span><span class="menu-link__jp">会社概要</span></span>
+          </a>
+          <a href="contact.html" class="menu-link is-current" style="--i:4">
+            <span class="menu-link__no">05</span>
+            <span class="menu-link__label"><span class="menu-link__en">Contact</span><span class="menu-link__jp">お問い合わせ</span></span>
+          </a>
+        </div>
+        <div class="menu-foot">
+          <a href="contact.html" class="btn btn--primary">お問い合わせフォームへ<span class="btn__arrow" aria-hidden="true"></span></a>
+          <p class="menu-foot__info">
+            <a href="mailto:msd1230.info@gmail.com">msd1230.info@gmail.com</a><br>
+            神奈川県横浜市西区浅間町1-4-3
+          </p>
+        </div>
       </nav>
       <div class="nav-overlay" id="navOverlay"></div>
     </div>
@@ -200,7 +230,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=20261011"></script>
-  <script src="assets/js/contact.js?v=20261011"></script>
+  <script src="assets/js/main.js?v=20261011b"></script>
+  <script src="assets/js/enhance.js?v=20261011b"></script>
+  <script src="assets/js/contact.js?v=20261011b"></script>
 </body>
 </html>

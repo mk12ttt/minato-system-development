@@ -1,0 +1,658 @@
+/* ==========================================================
+   theme.css（2026-10-11）
+   style.css の上にかぶせる、紺×シャンパンゴールドの見た目と新しいメニュー。
+   試作（preview2〜4）で確認した内容を本番用に1つにまとめたもの。
+   並び：①細部の調整 ②高級感（色・書体・ボタン）③メニュー ④最先端感
+========================================================== */
+
+/* ==========================================================
+   試作2：今の構成・写真・明朝の見出しはそのままに、細部だけ整える
+   （style.css の上にかぶせる。参考：LayerX / SmartHR / モンスターラボ）
+========================================================== */
+
+
+/* ---------- 読みやすさ：本文を少し太く・濃く・大きく ---------- */
+body { font-weight: 400; }
+.sec-body { font-size: 0.95rem; color: #3d4452; }
+.sec-body--white { color: rgba(255,255,255,0.92); }
+.sec-hero__body { font-size: 0.95rem; color: rgba(255,255,255,0.92); }
+.message p, .contact > p { font-size: 0.92rem; color: #3d4452; }
+.company__table td { font-size: 0.9rem; color: #3d4452; }
+
+/* 見出しは明朝のまま、少しだけ太く */
+.sec-heading, .sec-hero__heading, .message h2, .company h2, .sec-service__tagline h3 { font-weight: 600; }
+
+/* 英字ラベルの前に短い線（どこからが新しい区切りかを示す） */
+.sec-label { display: inline-flex; align-items: center; gap: 12px; }
+.sec-label::before { content: ''; width: 20px; height: 1px; background: currentColor; }
+.section-header .sec-label, .sec-service__header .sec-label { justify-content: center; }
+
+/* ---------- ボタン：角を丸め、右に丸い矢印 ---------- */
+.btn {
+  border-radius: 99px;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 7px 7px 7px 26px;
+  min-height: 52px;
+  font-weight: 500;
+}
+.btn__arrow {
+  position: relative; flex-shrink: 0;
+  width: 38px; height: 38px; border-radius: 50%; overflow: hidden;
+  background: rgba(255,255,255,0.95);
+}
+.btn__arrow::before, .btn__arrow::after {
+  content: ''; position: absolute; inset: 0;
+  background: no-repeat center / 15px 15px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M2 8h11M9 4l4 4-4 4' stroke='%232a9d6f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  transition: transform 0.45s var(--ease);
+}
+.btn__arrow::after { transform: translateX(-120%); }
+.btn--outline .btn__arrow { background: rgba(255,255,255,0.14); }
+.btn--outline .btn__arrow::before, .btn--outline .btn__arrow::after,
+.btn--ghost .btn__arrow::before, .btn--ghost .btn__arrow::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M2 8h11M9 4l4 4-4 4' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.btn--ghost .btn__arrow { background: var(--navy); }
+@media (hover: hover) {
+  .btn:hover { transform: none; box-shadow: none; }
+  .btn:hover .btn__arrow::before { transform: translateX(120%); }
+  .btn:hover .btn__arrow::after { transform: none; }
+}
+
+/* ---------- 事業内容：番号を付けて、項目名をはっきり ---------- */
+.sec-service__grid { counter-reset: svc; }
+.service-card { counter-increment: svc; }
+.service-card h3 { font-size: 1.15rem; font-weight: 600; }
+.service-card h3::before {
+  content: counter(svc, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-feature-settings: "lnum";
+  color: var(--emerald);
+  margin-bottom: 2px;
+}
+.service-card p { font-size: 0.88rem; color: #4d5462; }
+
+/* ---------- 実績：契約の流れを図で見せる ---------- */
+.works__card { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; max-width: 980px; border-radius: 16px; }
+.works__flow { position: relative; display: grid; gap: 14px; }
+.works__flow::before {
+  content: ''; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 2px;
+  background: linear-gradient(var(--emerald-light), rgba(52,196,132,0.2));
+}
+.works__flow li { position: relative; display: grid; grid-template-columns: 16px 1fr; column-gap: 16px; grid-template-areas: "dot t" "dot s"; align-items: center; }
+.works__dot { grid-area: dot; width: 16px; height: 16px; border-radius: 50%; background: var(--navy); border: 3px solid var(--emerald-light); position: relative; z-index: 1; }
+.works__flow b { grid-area: t; font-family: var(--font-jp-serif); font-weight: 600; color: #fff; font-size: 1rem; line-height: 1.5; }
+.works__flow small { grid-area: s; font-size: 0.78rem; color: rgba(255,255,255,0.62); line-height: 1.5; }
+
+/* ---------- お問い合わせ：紺の箱にして目立たせる ---------- */
+.contact {
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 48px 40px;
+  color: rgba(255,255,255,0.88);
+  position: relative;
+  overflow: hidden;
+}
+.contact::after {
+  content: ''; position: absolute; right: -100px; top: -100px; width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(52,196,132,0.3), rgba(52,196,132,0) 70%); pointer-events: none;
+}
+.contact .sec-label { color: var(--emerald-light); }
+.contact h2 { color: #fff; }
+.contact > p { color: rgba(255,255,255,0.85); }
+.contact__email { color: rgba(255,255,255,0.75); position: relative; z-index: 1; }
+.contact .btn { position: relative; z-index: 1; }
+
+/* ---------- スマホ ---------- */
+.float-cta { display: none; }
+@media (max-width: 768px) {
+  /* 本文の改行位置（1行22文字前後）を崩さない大きさにとどめる */
+  .sec-body { font-size: 0.9rem; line-height: 2; }
+  .sec-hero__body { font-size: 0.875rem; }
+  .cta-row .btn { justify-content: space-between; padding: 7px 7px 7px 24px; }
+
+  .service-card { gap: 18px; padding: 26px 0; }
+  .service-card__icon { margin-top: 26px; }
+  .service-card h3 { font-size: 1.1rem; white-space: normal; }
+  .service-card p { font-size: 0.86rem; }
+  /* 最後の項目の下線と、下の見出しの上線が2本並んで間が空いていたので、1本にして詰める */
+  .sec-service__grid { margin-bottom: 56px; }
+  .sec-service__tagline { border-top: none; padding-top: 0; }
+
+  .works__card { grid-template-columns: 1fr; gap: 36px; padding: 36px 24px; }
+
+  .contact { padding: 40px 24px; }
+  .contact .btn { width: 100%; }
+
+  /* 親指の届く位置に問い合わせボタン（最初の画面を過ぎたら出す） */
+  .float-cta {
+    display: inline-flex; align-items: center; gap: 14px;
+    position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 95;
+    padding: 6px 6px 6px 22px; min-height: 50px; border-radius: 99px;
+    background: var(--emerald); color: #fff; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em;
+    box-shadow: 0 10px 28px rgba(42,157,111,0.35);
+    transform: translate(-50%, 160%); transition: transform 0.45s var(--ease);
+  }
+  .float-cta.visible { transform: translate(-50%, 0); }
+  .float-cta .btn__arrow { width: 38px; height: 38px; }
+  /* 先頭へ戻るボタンと重ならないよう少し上へ */
+  .to-top { bottom: calc(82px + env(safe-area-inset-bottom)); }
+}
+
+/* スマホでは「SCROLL」の案内を出さない。下に写真がのぞいていて続きがあると分かるうえ、写真に重なって邪魔になるため */
+@media (max-width: 768px) {
+  .scroll-cue { display: none; }
+}
+
+/* PC：VISION の文字を右へ寄せ、左の富士山に重ならないようにする。暗いグラデーションも右側にかける */
+@media (min-width: 769px) {
+  .sec-vision { justify-content: flex-end; }
+  .sec-vision__content { margin-left: auto; margin-right: 0; }
+  .sec-vision__overlay {
+    background: linear-gradient(
+      250deg,
+      rgba(13,33,55,0.86) 0%,
+      rgba(13,33,55,0.70) 40%,
+      rgba(13,33,55,0.28) 64%,
+      rgba(13,33,55,0.04) 100%
+    );
+  }
+}
+
+/* ==========================================================
+   試作3：高級感（構成は試作2のまま）
+   ・色は紺とシャンパンゴールドの2色に絞る（明るい緑をやめる）
+   ・見出しは上品な明朝（しっぽり明朝）を細めに、字間を広く
+   ・ボタンは角のある細い線＋長い矢印。塗りつぶしの丸ボタンはやめる
+   ・余白を広く、動きをゆっくり
+========================================================== */
+:root {
+  --navy: #0b1828;
+  --ink: #16202e;
+  --gold: #c2a46e;          /* 紺地の上で使う明るめの金 */
+  --gold-deep: #8a6c3a;     /* 白地の上で読める濃さの金 */
+  --ivory: #f7f5f0;
+  --hair: rgba(22, 32, 46, 0.12);
+  /* 既存の緑を金に置き換える（白地＝濃い金、紺地＝明るい金） */
+  --emerald: var(--gold-deep);
+  --emerald-light: var(--gold);
+  --off-white: var(--ivory);
+  --font-jp-serif: 'Shippori Mincho', 'Noto Serif JP', serif;
+  --ease: cubic-bezier(0.22, 0.61, 0.21, 1);
+}
+
+/* 本文の字間は広げない（1行22文字前後で組んだ改行位置が崩れるため）。広げるのは見出しとラベルだけ */
+body { color: #3e4450; }
+
+/* ---------- 見出し：細めの明朝、字間を広く ---------- */
+.sec-heading, .sec-hero__heading, .message h2, .company h2, .contact h2, .sec-service__tagline h3 {
+  font-family: var(--font-jp-serif);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+.sec-hero__heading { letter-spacing: 0.12em; line-height: 1.5; }
+.sec-heading { color: var(--ink); }
+.sec-heading--white { color: #fff; }
+.service-card h3 { font-family: var(--font-jp-serif); font-weight: 600; letter-spacing: 0.08em; color: var(--ink); }
+
+/* 英字ラベル：大文字を広い字間で。前の線は細く長く */
+.sec-label { letter-spacing: 0.34em; font-size: 0.72rem; font-weight: 500; }
+.sec-label::before { width: 32px; height: 1px; }
+.sec-hero__sub { letter-spacing: 0.18em; color: rgba(255,255,255,0.7); }
+.sec-accent { width: 48px; height: 1px; background: var(--emerald); }
+
+/* 本文：行間を広く、少し温かいグレー */
+.sec-body, .message p, .contact > p, .sec-service__tagline p { line-height: 2.2; }
+
+/* ---------- ヘッダー・フッター ---------- */
+.header__logo { letter-spacing: 0.14em; font-weight: 400; }
+.header.scrolled { background: rgba(11, 24, 40, 0.94); box-shadow: 0 1px 0 rgba(194, 164, 110, 0.25); }
+.header__nav a { letter-spacing: 0.24em; }
+.footer { padding: 72px 0 56px; }
+.footer__logo { letter-spacing: 0.2em; color: rgba(255,255,255,0.75); }
+.footer__nav a { letter-spacing: 0.24em; }
+
+/* ---------- ボタン：角のある細い線＋長い矢印 ---------- */
+.btn {
+  border-radius: 0;
+  min-height: 56px;
+  padding: 0 28px;
+  gap: 28px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  background: transparent;
+  transition: background 0.6s var(--ease), color 0.6s var(--ease), border-color 0.6s var(--ease);
+}
+.btn--primary { background: transparent; color: #fff; border: 1px solid var(--gold); }
+.btn--outline { color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.35); }
+.btn--ghost { color: var(--ink); border: 1px solid rgba(22,32,46,0.35); }
+/* 白地の上の主ボタン（会社概要の下など）は紺で塗る */
+.bottom-section .btn--primary, .sec-service .btn--primary { background: var(--navy); border-color: var(--navy); }
+/* お問い合わせの紺の箱の中では、塗らずに金の線だけ */
+.contact .btn--primary { background: transparent; border-color: var(--gold); }
+
+/* 丸い矢印 → 細く長い線の矢印 */
+.btn__arrow {
+  width: 44px; height: 1px; border-radius: 0; overflow: visible;
+  background: currentColor !important;
+  position: relative;
+  transition: width 0.6s var(--ease);
+}
+.btn__arrow::before { display: none; }
+.btn__arrow::after {
+  content: ''; position: absolute; right: 0; top: -4px; left: auto; bottom: auto;
+  width: 9px; height: 9px; background: none !important;
+  border-top: 1px solid currentColor; border-right: 1px solid currentColor;
+  transform: rotate(45deg); transform-origin: center;
+}
+.btn--primary .btn__arrow { color: var(--gold); }
+@media (hover: hover) {
+  .btn--primary:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .btn--primary:hover .btn__arrow { color: var(--navy); }
+  .bottom-section .btn--primary:hover { background: var(--gold-deep); border-color: var(--gold-deep); color: #fff; }
+  .bottom-section .btn--primary:hover .btn__arrow { color: #fff; }
+  .contact .btn--primary:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+  .contact .btn--primary:hover .btn__arrow { color: var(--navy); }
+  .btn--outline:hover { background: rgba(255,255,255,0.08); border-color: #fff; }
+  .btn:hover .btn__arrow { width: 60px; }
+  .btn:hover .btn__arrow::after { transform: rotate(45deg); }
+}
+
+/* ---------- トップ：写真に細かい粒子を重ねて、元写真の粗さを目立たせない ---------- */
+.sec-hero::after {
+  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.18; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.sec-hero__content { z-index: 2; }
+.scroll-cue { z-index: 3; letter-spacing: 0.4em; }
+
+/* ---------- 余白を広く ---------- */
+.sec-service, .works, .bottom-section { padding: 160px 0; }
+.section-header, .sec-service__header { margin-bottom: 88px; }
+.bottom-section__grid { gap: 112px; }
+
+/* ---------- 事業内容：細い線と、金の番号 ---------- */
+.service-card h3::before { color: var(--gold-deep); font-weight: 500; letter-spacing: 0.2em; }
+.service-card__icon { color: var(--gold-deep); }
+.service-card__icon svg { stroke-width: 1; }
+.sec-service__tagline { border-top-color: var(--hair); }
+
+/* ---------- 実績：紺に金の細い内枠 ---------- */
+.works__card { border-radius: 0; padding: 72px 64px; position: relative; }
+.works__card::before {
+  content: ''; position: absolute; inset: 12px; border: 1px solid rgba(194,164,110,0.35); pointer-events: none;
+}
+.works__category { letter-spacing: 0.2em; }
+.works__title { font-weight: 400; letter-spacing: 0.06em; }
+.works__flow::before { background: linear-gradient(var(--gold), rgba(194,164,110,0.15)); width: 1px; left: 7.5px; }
+.works__dot { width: 16px; height: 16px; border-width: 1px; background: var(--navy); }
+.works__dot::after { content: ''; position: absolute; inset: 4px; border-radius: 50%; background: var(--gold); }
+.works__flow b { letter-spacing: 0.1em; font-weight: 500; }
+
+/* ---------- 会社概要：細い線 ---------- */
+.company__table tr { border-bottom-color: var(--hair); }
+.company__table th { letter-spacing: 0.16em; }
+
+/* ---------- お問い合わせ：紺に金の細い内枠（光のにじみはやめる） ---------- */
+.contact { border-radius: 0; padding: 72px 48px; text-align: center; }
+.contact::after {
+  content: ''; position: absolute; inset: 12px; width: auto; height: auto; border-radius: 0;
+  background: none; border: 1px solid rgba(194,164,110,0.35);
+}
+.contact .sec-label { justify-content: center; }
+.contact__email { justify-content: center; letter-spacing: 0.08em; }
+
+/* ---------- 先頭へ戻る：細い線の丸 ---------- */
+.to-top { background: rgba(11,24,40,0.85); border: 1px solid rgba(194,164,110,0.5); box-shadow: none; }
+
+/* ---------- 動きをゆっくり ---------- */
+.reveal { transition-duration: 1.4s; transform: translateY(16px); }
+.sec-hero__heading { animation-duration: 1.8s; }
+.sec-hero__sub, .sec-hero__body, .sec-hero .cta-row { animation-duration: 1.6s; }
+
+/* ---------- スマホ ---------- */
+@media (max-width: 768px) {
+  .sec-service, .works, .bottom-section { padding: 112px 0; }
+  .section-header, .sec-service__header { margin-bottom: 56px; }
+  .bottom-section__grid { gap: 88px; }
+  .sec-hero__heading { letter-spacing: 0.08em; }
+  .sec-heading { letter-spacing: 0.08em; }
+  .cta-row .btn { justify-content: space-between; padding: 0 22px; }
+  .works__card { padding: 48px 28px; }
+  .contact { padding: 56px 24px; }
+  /* 「業務改善のご相談からシステム開発まで、」を1行に収める */
+  .contact > p { font-size: 0.86rem; }
+  .contact .btn { padding: 0 20px; gap: 16px; }
+  .contact .btn__arrow { width: 32px; }
+
+  /* 画面下のボタン：紺に金の細い線、角あり */
+  .float-cta {
+    border-radius: 0; background: var(--navy); border: 1px solid var(--gold);
+    padding: 0 20px; min-height: 48px; gap: 18px; letter-spacing: 0.16em; font-size: 0.8rem;
+    box-shadow: 0 10px 30px rgba(11,24,40,0.3);
+  }
+  .float-cta .btn__arrow { color: var(--gold); width: 32px; height: 1px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sec-hero::after { display: none; }
+}
+
+/* ==========================================================
+   試作3：メニュー
+   ・PC：英字のメニュー。マウスを乗せると日本語に縦に切り替わる
+   ・スマホ：全画面のメニュー。番号付きの大きな明朝と英字、
+     開くと上から順に現れる。下にお問い合わせ・連絡先
+========================================================== */
+
+/* ---------- メニューボタン（MENU ＋ 長さの違う2本線） ---------- */
+.menu-btn { align-items: center; gap: 12px; flex-direction: row !important; padding: 10px 0 10px 10px; color: #fff; }
+.menu-btn__text { font-family: var(--font-serif); font-size: 0.72rem; letter-spacing: 0.3em; }
+.menu-btn__lines { display: grid; gap: 7px; justify-items: end; }
+.menu-btn__lines i { display: block; height: 1px; background: currentColor; transition: width 0.5s var(--ease); }
+.menu-btn__lines i:nth-child(1) { width: 28px; }
+.menu-btn__lines i:nth-child(2) { width: 18px; }
+@media (hover: hover) {
+  .menu-btn:hover .menu-btn__lines i:nth-child(2) { width: 28px; }
+}
+/* 古い3本線用の指定を打ち消す */
+.header__hamburger.active { opacity: 1; pointer-events: auto; }
+.menu-btn > span { width: auto; height: auto; background: none; transform: none !important; opacity: 1 !important; }
+
+/* ==========================================================
+   PC
+========================================================== */
+@media (min-width: 769px) {
+  .menu-top, .menu-foot, .menu-link__no { display: none; }
+  .menu-links { display: flex; gap: 44px; }
+  .menu-link { display: block; padding: 4px 0; }
+  .menu-link::after { bottom: -4px !important; background: var(--gold) !important; }
+  /* 英字と日本語を縦に重ね、乗せたら日本語へ送る */
+  .menu-link__label { display: block; height: 1.6em; overflow: hidden; line-height: 1.6; }
+  .menu-link__en, .menu-link__jp { display: block; transition: transform 0.6s var(--ease); }
+  .menu-link__en { font-family: var(--font-serif); font-size: 0.78rem; letter-spacing: 0.26em; text-transform: uppercase; }
+  .menu-link__jp { font-family: var(--font-jp-serif); font-size: 0.8rem; letter-spacing: 0.16em; color: var(--gold); }
+  @media (hover: hover) {
+    .menu-link:hover .menu-link__en, .menu-link:hover .menu-link__jp { transform: translateY(-100%); }
+  }
+}
+
+/* ==========================================================
+   スマホ：全画面メニュー
+========================================================== */
+@media (max-width: 768px) {
+  /* ヘッダーのすりガラス効果があると、全画面にならない端末があるため開いている間は外す */
+  .header:has(.header__nav.open) { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .nav-overlay { display: none !important; }
+
+  .header__nav {
+    position: fixed; inset: 0; right: 0 !important; left: 0;
+    width: 100%; max-width: none; height: 100vh; height: 100dvh;
+    display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 0;
+    padding: 0 28px calc(28px + env(safe-area-inset-bottom));
+    background:
+      linear-gradient(180deg, rgba(11,24,40,0.94) 0%, rgba(11,24,40,0.98) 60%, rgba(11,24,40,1) 100%),
+      url('../images/hero-pc.jpg') 84% center / cover no-repeat;
+    box-shadow: none;
+    z-index: 200;
+    overflow-y: auto;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.6s var(--ease), visibility 0s linear 0.6s;
+  }
+  .header__nav.open { opacity: 1; visibility: visible; transition: opacity 0.6s var(--ease), visibility 0s; }
+  .header__nav a::after { display: none !important; }
+
+  /* 上段：社名と CLOSE */
+  .menu-top { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); flex-shrink: 0; }
+  .menu-top__brand { font-family: var(--font-serif); font-size: 0.92rem; letter-spacing: 0.1em; white-space: nowrap; color: rgba(255,255,255,0.9); }
+  .menu-close {
+    position: static !important; display: inline-flex !important; align-items: center; gap: 12px;
+    width: auto !important; height: auto !important; padding: 10px 0 10px 10px;
+    color: #fff !important; background: none; border: none; cursor: pointer;
+  }
+  .menu-close span { font-family: var(--font-serif); font-size: 0.72rem; letter-spacing: 0.3em; }
+  .menu-close i { position: relative; width: 22px; height: 22px; }
+  .menu-close i::before, .menu-close i::after {
+    content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: currentColor;
+  }
+  .menu-close i::before { transform: rotate(45deg); }
+  .menu-close i::after { transform: rotate(-45deg); }
+
+  /* 項目：番号＋大きな明朝＋英字 */
+  .menu-links { margin-top: 24px; border-top: 1px solid rgba(194,164,110,0.25); }
+  .header__nav .menu-link {
+    display: grid; grid-template-columns: 44px 1fr; align-items: baseline;
+    padding: 20px 0; border-bottom: 1px solid rgba(194,164,110,0.25);
+    color: #fff; font-size: inherit; letter-spacing: 0;
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  }
+  .header__nav.open .menu-link {
+    opacity: 1; transform: none;
+    transition-delay: calc(var(--i) * 70ms + 150ms);
+  }
+  .menu-link__no { font-family: var(--font-serif); font-size: 0.85rem; letter-spacing: 0.1em; color: var(--gold); font-feature-settings: "lnum"; }
+  .menu-link__label { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .menu-link__jp { order: 1; font-family: var(--font-jp-serif); font-size: 1.35rem; letter-spacing: 0.14em; color: #fff; }
+  .menu-link__en { order: 2; font-family: var(--font-serif); font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(194,164,110,0.85); }
+  .header__nav .menu-link.is-current .menu-link__jp { color: var(--gold); }
+
+  /* 下段：お問い合わせと連絡先 */
+  .menu-foot {
+    margin-top: auto; padding-top: 32px; display: grid; gap: 20px;
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  }
+  .header__nav.open .menu-foot { opacity: 1; transform: none; transition-delay: 0.55s; }
+  .menu-foot .btn { width: 100%; justify-content: space-between; color: #fff; }
+  .menu-foot__info { font-family: var(--font-sans); font-size: 0.78rem; line-height: 2; letter-spacing: 0.06em; color: rgba(255,255,255,0.6); }
+  .menu-foot__info a { color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__nav .menu-link, .menu-foot { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* ==========================================================
+   試作4：最先端感（試作3の紺×金の上に重ねる）
+   ・ラベルを等幅フォントに、金→淡い水色のグラデーションを差し色に
+   ・上部のスクロール進捗バー、すりガラスのヘッダー
+   ・トップ：光の点と線がゆっくり動く、見出しは1文字ずつぼかしから現れる
+   ・カードはマウスの位置がほのかに光る（PC）
+   ・メニュー：スマホは画面をぼかすすりガラス、ボタンは丸。PC は半透明のカプセル
+========================================================== */
+:root {
+  --cyan: #9ad7e3;
+  --grad: linear-gradient(90deg, var(--gold), var(--cyan));
+  --mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+
+/* ---------- ラベル：等幅フォント＋グラデーションの線 ---------- */
+.sec-label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.24em; font-weight: 500; }
+.sec-label::before { width: 36px; height: 1px; background: var(--grad); }
+.sec-label--light { color: var(--cyan); }
+.sec-hero__sub { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.16em; }
+.sec-hero__sub::after { content: '_'; margin-left: 2px; color: var(--gold); animation: caret 1.1s steps(1) infinite; }
+@keyframes caret { 50% { opacity: 0; } }
+.service-card h3::before, .menu-link__no { font-family: var(--mono) !important; letter-spacing: 0.12em !important; }
+.sec-accent { background: var(--grad); }
+
+/* ---------- スクロール進捗バー ---------- */
+.scroll-progress {
+  position: fixed; left: 0; top: 0; z-index: 400; height: 2px; width: 100%;
+  background: var(--grad); transform-origin: left; transform: scaleX(var(--p, 0));
+  pointer-events: none;
+}
+
+/* ---------- ヘッダー：すりガラス＋細い光の線 ---------- */
+.header.scrolled {
+  background: rgba(9, 18, 31, 0.62);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: inset 0 -1px 0 rgba(154, 215, 227, 0.16);
+}
+
+/* ---------- トップ：光の点と線（canvas）と、1文字ずつ現れる見出し ---------- */
+.hero-net { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none; opacity: 0.55; mix-blend-mode: screen; }
+.sec-hero__heading.is-split { animation: none; }
+.sec-hero__heading .ch {
+  display: inline-block; opacity: 0; filter: blur(10px); transform: translateY(0.35em);
+  animation: chIn 1.2s var(--ease) forwards; animation-delay: calc(var(--n) * 55ms + 150ms);
+}
+@keyframes chIn { to { opacity: 1; filter: blur(0); transform: none; } }
+
+/* ---------- ボタン：乗せると光る ---------- */
+@media (hover: hover) {
+  .btn--primary:hover { box-shadow: 0 0 0 1px var(--gold), 0 0 28px rgba(194, 164, 110, 0.45); }
+}
+
+/* ---------- カード：マウスの位置がほのかに光る ---------- */
+.service-card, .works__card, .contact { --mx: -999px; --my: -999px; }
+.service-card {
+  position: relative;
+  background: radial-gradient(260px circle at var(--mx) var(--my), rgba(194, 164, 110, 0.12), transparent 70%);
+}
+.works__card {
+  background:
+    radial-gradient(420px circle at var(--mx) var(--my), rgba(154, 215, 227, 0.10), transparent 70%),
+    var(--navy);
+}
+.contact {
+  background:
+    radial-gradient(420px circle at var(--mx) var(--my), rgba(194, 164, 110, 0.14), transparent 70%),
+    var(--navy);
+}
+
+/* 実績の流れ：線を金→水色に、点をゆっくり光らせる */
+.works__flow::before { background: linear-gradient(var(--gold), var(--cyan)); }
+.works__dot::after { animation: pulse 2.6s ease-in-out infinite; animation-delay: calc(var(--k, 0) * 0.3s); }
+.works__flow li:nth-child(2) .works__dot { --k: 1; }
+.works__flow li:nth-child(3) .works__dot { --k: 2; }
+.works__flow li:nth-child(4) .works__dot { --k: 3; }
+.works__flow li:nth-child(5) .works__dot { --k: 4; }
+@keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(194,164,110,0.0); } 50% { box-shadow: 0 0 0 6px rgba(194,164,110,0.18); } }
+
+
+/* ---------- 先頭へ戻る：すりガラスの丸 ---------- */
+.to-top { background: rgba(9,18,31,0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(154,215,227,0.3); }
+
+/* ==========================================================
+   PC：半透明のカプセルに入れたメニュー。光の板が項目を追いかける
+========================================================== */
+@media (min-width: 769px) {
+  .menu-links {
+    position: relative; gap: 2px; padding: 5px;
+    border-radius: 99px; border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  }
+  .menu-link { position: relative; z-index: 1; padding: 7px 18px !important; border-radius: 99px; }
+  .menu-link::after { display: none !important; }
+  .menu-link__label { height: auto; overflow: visible; }
+  .menu-link__jp { display: none; }
+  .menu-link__en { transform: none !important; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.78); transition: color 0.3s; }
+  .menu-link.is-current .menu-link__en, .menu-link:hover .menu-link__en { color: #fff; }
+  .menu-indicator {
+    position: absolute; z-index: 0; top: 5px; bottom: 5px; left: 0; width: 0; border-radius: 99px;
+    background: linear-gradient(90deg, rgba(194,164,110,0.28), rgba(154,215,227,0.22));
+    box-shadow: inset 0 0 0 1px rgba(194,164,110,0.45);
+    opacity: 0; transition: left 0.5s var(--ease), width 0.5s var(--ease), opacity 0.3s;
+  }
+  .menu-indicator.on { opacity: 1; }
+}
+
+/* ==========================================================
+   スマホ
+========================================================== */
+@media (max-width: 768px) {
+  /* トップの写真：上のすき間を減らす。写真を少し大きくし、観覧車はボタンの下のまま */
+  .sec-hero {
+    background-image:
+      linear-gradient(to bottom, #2d5fa6 0, #2d5fa6 70px, rgba(45,95,166,0) 140px),
+      url('../images/hero-pc.jpg');
+    background-size: 100% 100%, auto 128%;
+    background-position: 0 0, 87% 90px;
+  }
+
+  /* サグラダ・ファミリア：写真をヘッダーのすぐ下から始める（80px の追加の余白をやめる） */
+  .sec-philosophy {
+    background-image:
+      linear-gradient(to bottom, #648ee0 0, rgba(100,142,224,0) 40px),
+      url('../images/philosophy-sp.jpg');
+    background-position: 0 0, center top;
+  }
+
+  /* ---- メニューボタン：すりガラスの丸。開くと同じ場所で × に変わる ---- */
+  .menu-btn {
+    width: 46px; height: 46px; padding: 0 !important; border-radius: 50%;
+    justify-content: center; gap: 0 !important;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  }
+  .menu-btn__text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  /* style.css の「ハンバーガーの span は block」に負けないよう詳しく指定する */
+  .menu-btn .menu-btn__lines { display: grid; gap: 6px; justify-items: center; }
+  .menu-btn__lines i:nth-child(1) { width: 18px; }
+  .menu-btn__lines i:nth-child(2) { width: 12px; }
+
+  /* ---- 全画面メニュー：後ろのページをぼかすすりガラス＋ゆっくり動く光 ---- */
+  .header__nav {
+    background: rgba(8, 16, 28, 0.72) !important;
+    backdrop-filter: blur(22px) saturate(130%);
+    -webkit-backdrop-filter: blur(22px) saturate(130%);
+    overflow-x: hidden;
+  }
+  .header__nav::before, .header__nav::after {
+    content: ''; position: absolute; z-index: -1; border-radius: 50%; filter: blur(40px); pointer-events: none;
+    animation: orb 14s ease-in-out infinite alternate;
+  }
+  .header__nav::before { width: 280px; height: 280px; right: -90px; top: 80px; background: rgba(194,164,110,0.28); }
+  .header__nav::after { width: 240px; height: 240px; left: -100px; bottom: 120px; background: rgba(154,215,227,0.20); animation-delay: -6s; }
+  @keyframes orb { to { transform: translate(-40px, 60px) scale(1.15); } }
+
+  .menu-top__brand { opacity: 0.85; }
+  /* × ボタン：メニューボタンと同じ位置・同じ丸で、回りながら現れる */
+  .menu-close {
+    width: 46px !important; height: 46px !important; padding: 0 !important; justify-content: center;
+    border-radius: 50%; background: rgba(255,255,255,0.08) !important; border: 1px solid rgba(255,255,255,0.22) !important;
+    transform: rotate(-90deg); transition: transform 0.6s var(--ease);
+  }
+  .header__nav.open .menu-close { transform: none; }
+  .menu-close span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .menu-close i { width: 16px; height: 16px; }
+
+  .menu-links { border-top-color: rgba(154,215,227,0.18); }
+  .header__nav .menu-link { position: relative; border-bottom-color: rgba(154,215,227,0.18); overflow: hidden; }
+  /* 項目の下を光が走る */
+  .header__nav .menu-link::before {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: var(--grad);
+    transform: scaleX(0); transform-origin: left; transition: transform 0.9s var(--ease);
+  }
+  .header__nav.open .menu-link::before { transform: scaleX(1); transition-delay: calc(var(--i) * 70ms + 350ms); }
+  .menu-link__no { font-size: 0.72rem !important; color: var(--cyan) !important; }
+  .menu-link__en { font-family: var(--mono) !important; font-size: 0.62rem !important; letter-spacing: 0.2em !important; color: rgba(154,215,227,0.8) !important; }
+  .header__nav .menu-link:active { background: rgba(255,255,255,0.04); }
+
+  .menu-foot .btn { border: 1px solid transparent; background: linear-gradient(var(--navy), var(--navy)) padding-box, var(--grad) border-box; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-net { display: none; }
+  .sec-hero__heading .ch { animation: none; opacity: 1; filter: none; transform: none; }
+  .works__dot::after, .header__nav::before, .header__nav::after, .sec-hero__sub::after { animation: none; }
+}
+
+/* ==========================================================
+   お問い合わせ・プライバシーポリシーのページ
+   白地の上の主ボタンは紺で塗る（透明だと白い文字が見えないため）
+========================================================== */
+.contact-page .btn--primary { background: var(--navy); border-color: var(--navy); color: #fff; }
+@media (hover: hover) {
+  .contact-page .btn--primary:hover { background: var(--gold-deep); border-color: var(--gold-deep); color: #fff; box-shadow: none; }
+}
