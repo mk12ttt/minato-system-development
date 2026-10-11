@@ -22,58 +22,8 @@
     heading.classList.add('is-split');
   }
 
-  // トップ：光の点と線がゆっくり動く
+  // （トップの光の点と線は 2026-10-11 にやめた。高級寄りに統一するため）
   const hero = document.querySelector('.sec-hero');
-  if (hero && !reduce) {
-    const cv = document.createElement('canvas');
-    cv.className = 'hero-net';
-    cv.setAttribute('aria-hidden', 'true');
-    hero.insertBefore(cv, hero.querySelector('.sec-hero__content'));
-    const ctx = cv.getContext('2d');
-    let w, h, pts, raf, visible = true;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const resize = () => {
-      w = hero.clientWidth; h = hero.clientHeight;
-      cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.round(Math.min(70, (w * h) / 16000));
-      pts = Array.from({ length: count }, () => ({
-        x: Math.random() * w, y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.22, vy: (Math.random() - 0.5) * 0.22,
-        r: Math.random() * 1.4 + 0.4,
-      }));
-    };
-    const draw = () => {
-      ctx.clearRect(0, 0, w, h);
-      for (const p of pts) {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > w) p.vx *= -1;
-        if (p.y < 0 || p.y > h) p.vy *= -1;
-      }
-      for (let i = 0; i < pts.length; i++) {
-        for (let j = i + 1; j < pts.length; j++) {
-          const a = pts[i], b = pts[j];
-          const d = Math.hypot(a.x - b.x, a.y - b.y);
-          if (d < 120) {
-            ctx.strokeStyle = `rgba(154,215,227,${(1 - d / 120) * 0.35})`;
-            ctx.lineWidth = 0.6;
-            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-          }
-        }
-      }
-      for (const p of pts) {
-        ctx.fillStyle = 'rgba(214,190,140,0.9)';
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
-      }
-      if (visible) raf = requestAnimationFrame(draw);
-    };
-    resize(); draw();
-    window.addEventListener('resize', resize);
-    // 画面外では止める（電池のため）
-    new IntersectionObserver(([e]) => {
-      visible = e.isIntersecting;
-      if (visible) { cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); }
-    }).observe(hero);
-  }
 
   // カード：マウスの位置をほのかに光らせる
   if (window.matchMedia('(hover: hover)').matches) {
