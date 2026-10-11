@@ -4,7 +4,6 @@
    ・上部のスクロール進捗バー、すりガラスのヘッダー
    ・トップ：光の点と線がゆっくり動く、見出しは1文字ずつぼかしから現れる
    ・カードはマウスの位置がほのかに光る（PC）
-   ・事業内容と実績の間に、英字がゆっくり流れる帯
    ・メニュー：スマホは画面をぼかすすりガラス、ボタンは丸。PC は半透明のカプセル
 ========================================================== */
 :root {
@@ -78,16 +77,6 @@
 .works__flow li:nth-child(5) .works__dot { --k: 4; }
 @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(194,164,110,0.0); } 50% { box-shadow: 0 0 0 6px rgba(194,164,110,0.18); } }
 
-/* ---------- 英字が流れる帯 ---------- */
-.marquee { overflow: hidden; background: var(--ivory); padding: 28px 0; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
-.marquee__track { display: flex; width: max-content; gap: 48px; animation: marquee 48s linear infinite; }
-/* イタリック＋縁取りだと読みにくく古めかしく見えたため、まっすぐな形を薄い紺で塗る */
-.marquee__track span {
-  font-family: var(--font-serif); font-size: clamp(2.4rem, 6vw, 4.6rem); font-style: normal; font-weight: 500;
-  letter-spacing: 0.06em; white-space: nowrap; color: rgba(22, 32, 46, 0.16);
-}
-.marquee__track span:nth-child(even) { -webkit-text-stroke: 0; color: var(--gold-deep); font-style: normal; font-family: var(--mono); font-size: clamp(0.8rem, 1.4vw, 1rem); align-self: center; letter-spacing: 0.3em; }
-@keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ---------- 先頭へ戻る：すりガラスの丸 ---------- */
 .to-top { background: rgba(9,18,31,0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(154,215,227,0.3); }
@@ -137,9 +126,6 @@
       url('../assets/images/philosophy-sp.jpg');
     background-position: 0 0, center top;
   }
-
-  .marquee { padding: 20px 0; }
-  .marquee__track { gap: 32px; animation-duration: 36s; }
 
   /* ---- メニューボタン：すりガラスの丸。開くと同じ場所で × に変わる ---- */
   .menu-btn {
@@ -198,5 +184,5 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-net { display: none; }
   .sec-hero__heading .ch { animation: none; opacity: 1; filter: none; transform: none; }
-  .marquee__track, .works__dot::after, .header__nav::before, .header__nav::after, .sec-hero__sub::after { animation: none; }
+  .works__dot::after, .header__nav::before, .header__nav::after, .sec-hero__sub::after { animation: none; }
 }
