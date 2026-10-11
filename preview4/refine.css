@@ -141,3 +141,8 @@ body { font-weight: 400; }
   /* 先頭へ戻るボタンと重ならないよう少し上へ */
   .to-top { bottom: calc(82px + env(safe-area-inset-bottom)); }
 }
+
+/* スマホでは「SCROLL」の案内を出さない。下に写真がのぞいていて続きがあると分かるうえ、写真に重なって邪魔になるため */
+@media (max-width: 768px) {
+  .scroll-cue { display: none; }
+}
