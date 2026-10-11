@@ -1,0 +1,180 @@
+/* ==========================================================
+   試作3：高級感（構成は試作2のまま）
+   ・色は紺とシャンパンゴールドの2色に絞る（明るい緑をやめる）
+   ・見出しは上品な明朝（しっぽり明朝）を細めに、字間を広く
+   ・ボタンは角のある細い線＋長い矢印。塗りつぶしの丸ボタンはやめる
+   ・余白を広く、動きをゆっくり
+========================================================== */
+:root {
+  --navy: #0b1828;
+  --ink: #16202e;
+  --gold: #c2a46e;          /* 紺地の上で使う明るめの金 */
+  --gold-deep: #8a6c3a;     /* 白地の上で読める濃さの金 */
+  --ivory: #f7f5f0;
+  --hair: rgba(22, 32, 46, 0.12);
+  /* 既存の緑を金に置き換える（白地＝濃い金、紺地＝明るい金） */
+  --emerald: var(--gold-deep);
+  --emerald-light: var(--gold);
+  --off-white: var(--ivory);
+  --font-jp-serif: 'Shippori Mincho', 'Noto Serif JP', serif;
+  --ease: cubic-bezier(0.22, 0.61, 0.21, 1);
+}
+
+/* 本文の字間は広げない（1行22文字前後で組んだ改行位置が崩れるため）。広げるのは見出しとラベルだけ */
+body { color: #3e4450; }
+
+/* ---------- 見出し：細めの明朝、字間を広く ---------- */
+.sec-heading, .sec-hero__heading, .message h2, .company h2, .contact h2, .sec-service__tagline h3 {
+  font-family: var(--font-jp-serif);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+.sec-hero__heading { letter-spacing: 0.12em; line-height: 1.5; }
+.sec-heading { color: var(--ink); }
+.sec-heading--white { color: #fff; }
+.service-card h3 { font-family: var(--font-jp-serif); font-weight: 600; letter-spacing: 0.08em; color: var(--ink); }
+
+/* 英字ラベル：大文字を広い字間で。前の線は細く長く */
+.sec-label { letter-spacing: 0.34em; font-size: 0.72rem; font-weight: 500; }
+.sec-label::before { width: 32px; height: 1px; }
+.sec-hero__sub { letter-spacing: 0.18em; color: rgba(255,255,255,0.7); }
+.sec-accent { width: 48px; height: 1px; background: var(--emerald); }
+
+/* 本文：行間を広く、少し温かいグレー */
+.sec-body, .message p, .contact > p, .sec-service__tagline p { line-height: 2.2; }
+
+/* ---------- ヘッダー・フッター ---------- */
+.header__logo { letter-spacing: 0.14em; font-weight: 400; }
+.header.scrolled { background: rgba(11, 24, 40, 0.94); box-shadow: 0 1px 0 rgba(194, 164, 110, 0.25); }
+.header__nav a { letter-spacing: 0.24em; }
+.footer { padding: 72px 0 56px; }
+.footer__logo { letter-spacing: 0.2em; color: rgba(255,255,255,0.75); }
+.footer__nav a { letter-spacing: 0.24em; }
+
+/* ---------- ボタン：角のある細い線＋長い矢印 ---------- */
+.btn {
+  border-radius: 0;
+  min-height: 56px;
+  padding: 0 28px;
+  gap: 28px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  background: transparent;
+  transition: background 0.6s var(--ease), color 0.6s var(--ease), border-color 0.6s var(--ease);
+}
+.btn--primary { background: transparent; color: #fff; border: 1px solid var(--gold); }
+.btn--outline { color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.35); }
+.btn--ghost { color: var(--ink); border: 1px solid rgba(22,32,46,0.35); }
+/* 白地の上の主ボタン（会社概要の下など）は紺で塗る */
+.bottom-section .btn--primary, .sec-service .btn--primary { background: var(--navy); border-color: var(--navy); }
+/* お問い合わせの紺の箱の中では、塗らずに金の線だけ */
+.contact .btn--primary { background: transparent; border-color: var(--gold); }
+
+/* 丸い矢印 → 細く長い線の矢印 */
+.btn__arrow {
+  width: 44px; height: 1px; border-radius: 0; overflow: visible;
+  background: currentColor !important;
+  position: relative;
+  transition: width 0.6s var(--ease);
+}
+.btn__arrow::before { display: none; }
+.btn__arrow::after {
+  content: ''; position: absolute; right: 0; top: -4px; left: auto; bottom: auto;
+  width: 9px; height: 9px; background: none !important;
+  border-top: 1px solid currentColor; border-right: 1px solid currentColor;
+  transform: rotate(45deg); transform-origin: center;
+}
+.btn--primary .btn__arrow { color: var(--gold); }
+@media (hover: hover) {
+  .btn--primary:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .btn--primary:hover .btn__arrow { color: var(--navy); }
+  .bottom-section .btn--primary:hover { background: var(--gold-deep); border-color: var(--gold-deep); color: #fff; }
+  .bottom-section .btn--primary:hover .btn__arrow { color: #fff; }
+  .contact .btn--primary:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+  .contact .btn--primary:hover .btn__arrow { color: var(--navy); }
+  .btn--outline:hover { background: rgba(255,255,255,0.08); border-color: #fff; }
+  .btn:hover .btn__arrow { width: 60px; }
+  .btn:hover .btn__arrow::after { transform: rotate(45deg); }
+}
+
+/* ---------- トップ：写真に細かい粒子を重ねて、元写真の粗さを目立たせない ---------- */
+.sec-hero::after {
+  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.18; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.sec-hero__content { z-index: 2; }
+.scroll-cue { z-index: 3; letter-spacing: 0.4em; }
+
+/* ---------- 余白を広く ---------- */
+.sec-service, .works, .bottom-section { padding: 160px 0; }
+.section-header, .sec-service__header { margin-bottom: 88px; }
+.bottom-section__grid { gap: 112px; }
+
+/* ---------- 事業内容：細い線と、金の番号 ---------- */
+.service-card h3::before { color: var(--gold-deep); font-weight: 500; letter-spacing: 0.2em; }
+.service-card__icon { color: var(--gold-deep); }
+.service-card__icon svg { stroke-width: 1; }
+.sec-service__tagline { border-top-color: var(--hair); }
+
+/* ---------- 実績：紺に金の細い内枠 ---------- */
+.works__card { border-radius: 0; padding: 72px 64px; position: relative; }
+.works__card::before {
+  content: ''; position: absolute; inset: 12px; border: 1px solid rgba(194,164,110,0.35); pointer-events: none;
+}
+.works__category { letter-spacing: 0.2em; }
+.works__title { font-weight: 400; letter-spacing: 0.06em; }
+.works__flow::before { background: linear-gradient(var(--gold), rgba(194,164,110,0.15)); width: 1px; left: 7.5px; }
+.works__dot { width: 16px; height: 16px; border-width: 1px; background: var(--navy); }
+.works__dot::after { content: ''; position: absolute; inset: 4px; border-radius: 50%; background: var(--gold); }
+.works__flow b { letter-spacing: 0.1em; font-weight: 500; }
+
+/* ---------- 会社概要：細い線 ---------- */
+.company__table tr { border-bottom-color: var(--hair); }
+.company__table th { letter-spacing: 0.16em; }
+
+/* ---------- お問い合わせ：紺に金の細い内枠（光のにじみはやめる） ---------- */
+.contact { border-radius: 0; padding: 72px 48px; text-align: center; }
+.contact::after {
+  content: ''; position: absolute; inset: 12px; width: auto; height: auto; border-radius: 0;
+  background: none; border: 1px solid rgba(194,164,110,0.35);
+}
+.contact .sec-label { justify-content: center; }
+.contact__email { justify-content: center; letter-spacing: 0.08em; }
+
+/* ---------- 先頭へ戻る：細い線の丸 ---------- */
+.to-top { background: rgba(11,24,40,0.85); border: 1px solid rgba(194,164,110,0.5); box-shadow: none; }
+
+/* ---------- 動きをゆっくり ---------- */
+.reveal { transition-duration: 1.4s; transform: translateY(16px); }
+.sec-hero__heading { animation-duration: 1.8s; }
+.sec-hero__sub, .sec-hero__body, .sec-hero .cta-row { animation-duration: 1.6s; }
+
+/* ---------- スマホ ---------- */
+@media (max-width: 768px) {
+  .sec-service, .works, .bottom-section { padding: 112px 0; }
+  .section-header, .sec-service__header { margin-bottom: 56px; }
+  .bottom-section__grid { gap: 88px; }
+  .sec-hero__heading { letter-spacing: 0.08em; }
+  .sec-heading { letter-spacing: 0.08em; }
+  .cta-row .btn { justify-content: space-between; padding: 0 22px; }
+  .works__card { padding: 48px 28px; }
+  .contact { padding: 56px 24px; }
+  /* 「業務改善のご相談からシステム開発まで、」を1行に収める */
+  .contact > p { font-size: 0.86rem; }
+  .contact .btn { padding: 0 20px; gap: 16px; }
+  .contact .btn__arrow { width: 32px; }
+
+  /* 画面下のボタン：紺に金の細い線、角あり */
+  .float-cta {
+    border-radius: 0; background: var(--navy); border: 1px solid var(--gold);
+    padding: 0 20px; min-height: 48px; gap: 18px; letter-spacing: 0.16em; font-size: 0.8rem;
+    box-shadow: 0 10px 30px rgba(11,24,40,0.3);
+  }
+  .float-cta .btn__arrow { color: var(--gold); width: 32px; height: 1px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sec-hero::after { display: none; }
+}
